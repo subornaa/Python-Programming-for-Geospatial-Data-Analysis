@@ -159,7 +159,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="week1.html"><div align="center">Chapter 1 <br/>An Introductory Guide to Python</div></a></li>
 <li class="toctree-l1"><a class="reference internal" href="week2.html"><div align="center">Chapter 2 <br/>Python Fundamentals </div></a></li>
 <li class="toctree-l1"><a class="reference internal" href="week3.html"><div align="center">Chapter 3<br/>Control Flow </div></a></li>
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><div align="center">Chapter 4<br/>Errors and Exceptions in Python </div></a></li>
 </ul>
 
@@ -362,21 +361,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-errors">1.4 Type Errors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-errors">1.5 Import Errors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#value-errors">1.6 Value Errors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-errors">1.7 Index Errors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lots-of-types-of-errors">Lots of Types of Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-errors">1.7 Index Errors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lots-of-types-of-errors">Lots of Types of Errors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions-in-python">2. Exceptions in Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-built-in-exceptions">Python Built-in Exceptions:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-exceptions">2.1 Handling Exceptions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-float-method-example">Improving float() Method Example</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-up-actions">Clean-up Actions</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-files-ioerror">2.2 Text files IOError</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-read-write-append-to-etc-text-files">How to read, write, append to, etc text files</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-exceptions">2.1 Handling Exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-files-ioerror">2.2 Text files IOError</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-fix-errors">3. How to Fix Errors?</a></li>
@@ -501,7 +495,7 @@ Read the error messages carefully and correct the errors for the following code.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_76055/210383151.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_77610/210383151.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
     <span class="n">nope</span> <span class="o">=</span> <span class="s2">&quot;not working   correct this error</span>
                                             <span class="o">^</span>
 <span class="ne">SyntaxError</span>: EOL while scanning string literal
@@ -807,9 +801,8 @@ However, when “m” is goes larger than 2, this line will raise an IndexError,
 </div>
 </div>
 </div>
-</section>
 <section id="lots-of-types-of-errors">
-<h3>Lots of Types of Errors<a class="headerlink" href="#lots-of-types-of-errors" title="Permalink to this heading">#</a></h3>
+<h4>Lots of Types of Errors<a class="headerlink" href="#lots-of-types-of-errors" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>We have talked about Logical Errors, Syntax Errors, Name Errors, Type Errors, Import Errors, Value Errors, Index Errors.<br>
 <br></p></li>
@@ -977,6 +970,7 @@ nan
 </div>
 </section>
 </section>
+</section>
 <section id="exceptions-in-python">
 <h2>2. Exceptions in Python<a class="headerlink" href="#exceptions-in-python" title="Permalink to this heading">#</a></h2>
 <p>Exceptions are a fundamental concept in Python programming that allow for the <strong>handling of errors and exceptional conditions</strong>. When an error occurs during the execution of a program, an exception is raised, indicating that something unexpected has happened. Python provides a range of built-in exceptions that represent different types of errors, and programmers can also create custom exceptions. By using exception handling techniques, such as <strong><code class="docutils literal notranslate"><span class="pre">try-except</span></code></strong> blocks, programmers can gracefully handle exceptions, prevent program crashes, and implement specific error-handling logic.</p>
@@ -1071,8 +1065,7 @@ Result: 5.0
 </ol>
 </div>
 <p>See <a class="reference internal" href="#section-label-4-5"><span class="std std-ref">solutions for activity 5</span></a> at the end.</p>
-<section id="improving-float-method-example">
-<h4>Improving float() Method Example<a class="headerlink" href="#improving-float-method-example" title="Permalink to this heading">#</a></h4>
+<p><strong>Improving float() Method Example:</strong></p>
 <ul class="simple">
 <li><p>Float method returns errors when the input is not a number, or a string that can be parsed as individual numeric values)</p></li>
 </ul>
@@ -1202,10 +1195,9 @@ which will print a user-friendly error message guiding the user to enter a valid
 </div>
 </div>
 </div>
-</section>
-<section id="clean-up-actions">
-<h4>Clean-up Actions<a class="headerlink" href="#clean-up-actions" title="Permalink to this heading">#</a></h4>
-<p>Try <code>finally</code> statement is used to define clean-up actions that <strong>must be executed under all circumstances</strong>.<br>
+<p><strong>Clean-up Actions:</strong>
+<br>
+Try <code>finally</code> statement is used to define clean-up actions that <strong>must be executed under all circumstances</strong>.<br>
 See more examples <a class="reference external" href="https://docs.python.org/3/tutorial/errors.html">here.</a></p>
 <div class="tip admonition">
 <p class="admonition-title">Note</p>
@@ -1284,12 +1276,10 @@ Cleaning up....
 </div>
 </div>
 </section>
-</section>
 <section id="text-files-ioerror">
 <h3>2.2 Text files IOError<a class="headerlink" href="#text-files-ioerror" title="Permalink to this heading">#</a></h3>
 <p><code>IOError ➡ FileNotFoundError</code> is an error when an input/output operation fails on text files, such as the print statement or the open() function when trying to open a file that does not exist, or does not have sufficient permissions or has other file-related issues when reading from or writing to a text file.</p>
-<section id="how-to-read-write-append-to-etc-text-files">
-<h4>How to read, write, append to, etc text files<a class="headerlink" href="#how-to-read-write-append-to-etc-text-files" title="Permalink to this heading">#</a></h4>
+<p><strong>How to read, write, append to, etc text files:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;C:\folder1\subfolder\file1.txt&#39;</span>
 </pre></div>
 </div>
@@ -1459,7 +1449,6 @@ Cleaning up....
 </div>
 </div>
 </div>
-</section>
 </section>
 </section>
 <section id="how-to-fix-errors">
@@ -2307,21 +2296,16 @@ Please enter a number: 8
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-errors">1.4 Type Errors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-errors">1.5 Import Errors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#value-errors">1.6 Value Errors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-errors">1.7 Index Errors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lots-of-types-of-errors">Lots of Types of Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-errors">1.7 Index Errors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lots-of-types-of-errors">Lots of Types of Errors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions-in-python">2. Exceptions in Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-built-in-exceptions">Python Built-in Exceptions:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-exceptions">2.1 Handling Exceptions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-float-method-example">Improving float() Method Example</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-up-actions">Clean-up Actions</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-files-ioerror">2.2 Text files IOError</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-read-write-append-to-etc-text-files">How to read, write, append to, etc text files</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-exceptions">2.1 Handling Exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-files-ioerror">2.2 Text files IOError</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-fix-errors">3. How to Fix Errors?</a></li>

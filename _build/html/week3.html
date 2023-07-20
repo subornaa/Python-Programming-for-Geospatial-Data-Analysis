@@ -360,10 +360,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-blue-learning-objectives-span"><span style="color:blue"> Learning Objectives:</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-the-action">1. Controlling the Action:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precursor-to-conditional-statements">1.1 Precursor to Conditional Statements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">1.2 Conditional Statements</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax-for-conditional-statements">Basic Syntax for Conditional Statements:</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">1.2 Conditional Statements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-decisions">1.3 Complex Decisions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-expressions">1.3.1 Conditional expressions</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-blue-evaluates-to-false-span"><span style="color: blue">Evaluates to False:</span></a></li>
@@ -391,7 +388,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-in-python">2. Functions in Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">Built-in Functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-def">2.1 Function: <strong><code class="docutils literal notranslate"><span class="pre">def</span></code></strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#def-function-example-applying-pythagorean-equation-to-calculate-the-distance-between-two-points"><code class="docutils literal notranslate"><span class="pre">def</span></code> function example: Applying Pythagorean Equation to calculate the distance between two points</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#single-or-multiple-objects">2.1.1 Single or Multiple Objects</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#default-arguments">2.1.2 Default Arguments</a></li>
 </ul>
@@ -411,10 +407,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#symbol-mark-style-background-color-pink-mark-multiple-statements-on-a-single-line">Symbol <mark style="background-color: pink"> ; </mark>: multiple statements on a single line</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keywords-reserved-words">3.6 Keywords/Reserved Words</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#here-are-some-commonly-used-reserved-words-in-python">Here are some commonly used reserved words in Python:</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keywords-reserved-words">3.6 Keywords/Reserved Words</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-assignments">3.7 Multiple assignments</a></li>
 </ul>
 </li>
@@ -547,8 +540,7 @@ True
 <section id="conditional-statements">
 <h3>1.2 Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permalink to this heading">#</a></h3>
 <p>Conditional statements help us decide the flow while making a decision based on values in a data set. It affects what the result we receive. We mostly use <code class="docutils literal notranslate"><span class="pre">if</span></code> statements but more statements are added using <code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements. These statements allow you to create branching paths in your code based on different conditions.</p>
-<section id="basic-syntax-for-conditional-statements">
-<h4>Basic Syntax for Conditional Statements:<a class="headerlink" href="#basic-syntax-for-conditional-statements" title="Permalink to this heading">#</a></h4>
+<p><strong>Basic Syntax for Conditional Statements:</strong></p>
 <p><strong>- <code class="docutils literal notranslate"><span class="pre">if</span></code> statement:</strong> <br></p>
 <span style="color: green;font-weight:bold">
 &emsp; if (conditional expression): <br>
@@ -569,7 +561,9 @@ True
 &emsp;&emsp; Statement blocks 2 (statements to execute when the condition 2 is True)<br>
 &emsp; … <br> 
 &emsp; else: <br>
-&emsp;&emsp; Statement blocks n (statements to execute if all the conditions above are False)<br><p><strong>Before talking about the conditional statement example below, we look at the <code class="docutils literal notranslate"><span class="pre">input(</span> <span class="pre">)</span></code> function first.</strong></p>
+&emsp;&emsp; Statement blocks n (statements to execute if all the conditions above are False)
+<br>
+<br><p><strong>Before talking about the conditional statement example below, we look at the <code class="docutils literal notranslate"><span class="pre">input(</span> <span class="pre">)</span></code> function first.</strong></p>
 <ul class="simple">
 <li><p>The code below give an example to use the input( ) funciton to receive user’s input information and assign it to the variable “test1”. Then print “Hi ” plus the user’s input.</p></li>
 </ul>
@@ -584,7 +578,7 @@ True
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">qt</span><span class="o">/</span><span class="n">qy37fy6s3c1553y2k74063pr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_76425</span><span class="o">/</span><span class="mf">232272545.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">qt</span><span class="o">/</span><span class="n">qy37fy6s3c1553y2k74063pr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_77602</span><span class="o">/</span><span class="mf">232272545.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Example for input function</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">test1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your first name:&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi &#39;</span><span class="p">,</span>  <span class="n">test1</span><span class="p">)</span>
@@ -648,7 +642,6 @@ True
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="complex-decisions">
 <h3>1.3 Complex Decisions<a class="headerlink" href="#complex-decisions" title="Permalink to this heading">#</a></h3>
@@ -1629,8 +1622,7 @@ max(g3): 18
 </ul>
 </li>
 </ul>
-<section id="def-function-example-applying-pythagorean-equation-to-calculate-the-distance-between-two-points">
-<h4><code class="docutils literal notranslate"><span class="pre">def</span></code> function example: Applying Pythagorean Equation to calculate the distance between two points<a class="headerlink" href="#def-function-example-applying-pythagorean-equation-to-calculate-the-distance-between-two-points" title="Permalink to this heading">#</a></h4>
+<p><strong><code class="docutils literal notranslate"><span class="pre">def</span></code> function example:<br>Applying Pythagorean Equation to calculate the distance between two points</strong></p>
 <p>If we know the lengths of the two shortest sides (or coordinates of three points) we can find the length of the longest side using the Pythagorean equation.</p>
 <p><img alt="Pythagorean.png" src="_images/Pythagorean.png" /></p>
 <p><img alt="points_dist.png" src="_images/points_dist.png" /></p>
@@ -1655,7 +1647,6 @@ max(g3): 18
 </div>
 </div>
 </div>
-</section>
 <section id="single-or-multiple-objects">
 <h4>2.1.1 Single or Multiple Objects<a class="headerlink" href="#single-or-multiple-objects" title="Permalink to this heading">#</a></h4>
 <p>Using <code class="docutils literal notranslate"><span class="pre">def</span></code> function we can <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">one</span> <span class="pre">or</span> <span class="pre">more</span> <span class="pre">objects</span></code>. Previous examples returned one object.</p>
@@ -1965,8 +1956,7 @@ second line
 </div>
 </div>
 </div>
-<section id="here-are-some-commonly-used-reserved-words-in-python">
-<h4>Here are some commonly used reserved words in Python:<a class="headerlink" href="#here-are-some-commonly-used-reserved-words-in-python" title="Permalink to this heading">#</a></h4>
+<p><strong>Here are some commonly used reserved words in Python:</strong></p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -2016,7 +2006,6 @@ second line
 <ul class="simple">
 <li><p>red ones are those we have used before</p></li>
 </ul>
-</section>
 </section>
 <section id="multiple-assignments">
 <h3>3.7 Multiple assignments<a class="headerlink" href="#multiple-assignments" title="Permalink to this heading">#</a></h3>
@@ -2734,10 +2723,7 @@ We then perform various arithmetic operations on these int and float objects usi
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-blue-learning-objectives-span"><span style="color:blue"> Learning Objectives:</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-the-action">1. Controlling the Action:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precursor-to-conditional-statements">1.1 Precursor to Conditional Statements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">1.2 Conditional Statements</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax-for-conditional-statements">Basic Syntax for Conditional Statements:</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">1.2 Conditional Statements</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-decisions">1.3 Complex Decisions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-expressions">1.3.1 Conditional expressions</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-blue-evaluates-to-false-span"><span style="color: blue">Evaluates to False:</span></a></li>
@@ -2765,7 +2751,6 @@ We then perform various arithmetic operations on these int and float objects usi
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-in-python">2. Functions in Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">Built-in Functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-def">2.1 Function: <strong><code class="docutils literal notranslate"><span class="pre">def</span></code></strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#def-function-example-applying-pythagorean-equation-to-calculate-the-distance-between-two-points"><code class="docutils literal notranslate"><span class="pre">def</span></code> function example: Applying Pythagorean Equation to calculate the distance between two points</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#single-or-multiple-objects">2.1.1 Single or Multiple Objects</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#default-arguments">2.1.2 Default Arguments</a></li>
 </ul>
@@ -2785,10 +2770,7 @@ We then perform various arithmetic operations on these int and float objects usi
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#symbol-mark-style-background-color-pink-mark-multiple-statements-on-a-single-line">Symbol <mark style="background-color: pink"> ; </mark>: multiple statements on a single line</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keywords-reserved-words">3.6 Keywords/Reserved Words</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#here-are-some-commonly-used-reserved-words-in-python">Here are some commonly used reserved words in Python:</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keywords-reserved-words">3.6 Keywords/Reserved Words</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-assignments">3.7 Multiple assignments</a></li>
 </ul>
 </li>

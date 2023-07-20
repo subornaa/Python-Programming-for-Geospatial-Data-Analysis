@@ -21,7 +21,7 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 nope = "not working   correct this error
 ------------------
 
-[0;36m  File [0;32m"/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_76055/210383151.py"[0;36m, line [0;32m2[0m
+[0;36m  File [0;32m"/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_77610/210383151.py"[0;36m, line [0;32m2[0m
 [0;31m    nope = "not working   correct this error[0m
 [0m                                            ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m EOL while scanning string literal
