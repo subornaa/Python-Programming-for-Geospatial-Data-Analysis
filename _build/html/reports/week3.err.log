@@ -17,24 +17,25 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# example to show tuple is immutable
-my_tuple = (1, 2, 3)
-print("Original tuple:", my_tuple)
-
-# we try to change the element at index 1, the second element, in the tuple
-# the error message shows we cannot change elements in tuple
-my_tuple[1] = 10
-print("Updated tuple:", my_tuple) # an Error is expected when run this code
+# Example for input function
+test1 = input('Enter your first name:')
+print('Hi ',  test1)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_76040/4002316466.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      5[0m [0;31m# we try to change the element at index 1, the second element, in the tuple[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      6[0m [0;31m# the error message shows we cannot change elements in tuple[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 7[0;31m [0mmy_tuple[0m[0;34m[[0m[0;36m1[0m[0;34m][0m [0;34m=[0m [0;36m10[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      8[0m [0mprint[0m[0;34m([0m[0;34m"Updated tuple:"[0m[0;34m,[0m [0mmy_tuple[0m[0;34m)[0m [0;31m# an Error is expected when run this code[0m[0;34m[0m[0;34m[0m[0m
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+[0;32m/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_76050/232272545.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;31m# Example for input function[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mtest1[0m [0;34m=[0m [0minput[0m[0;34m([0m[0;34m'Enter your first name:'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0mprint[0m[0;34m([0m[0;34m'Hi '[0m[0;34m,[0m  [0mtest1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mTypeError[0m: 'tuple' object does not support item assignment
-TypeError: 'tuple' object does not support item assignment
+[0;32m/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py[0m in [0;36mraw_input[0;34m(self, prompt)[0m
+[1;32m   1001[0m         """
+[1;32m   1002[0m         [0;32mif[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_allow_stdin[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1003[0;31m             raise StdinNotImplementedError(
+[0m[1;32m   1004[0m                 [0;34m"raw_input was called, but this frontend does not support input requests."[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1005[0m             )
+
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
 
