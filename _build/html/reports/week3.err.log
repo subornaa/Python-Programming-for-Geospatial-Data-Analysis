@@ -24,7 +24,7 @@ print('Hi ',  test1)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
-[0;32m/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_77602/232272545.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_28846/232272545.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;31m# Example for input function[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 2[0;31m [0mtest1[0m [0;34m=[0m [0minput[0m[0;34m([0m[0;34m'Enter your first name:'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0mprint[0m[0;34m([0m[0;34m'Hi '[0m[0;34m,[0m  [0mtest1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

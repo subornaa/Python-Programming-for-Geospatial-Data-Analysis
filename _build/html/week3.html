@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 3Control Flow &#8212; My sample book</title>
+    <title>Chapter 3 &#8212; My sample book</title>
   
   
   
@@ -66,8 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'week3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Chapter 4Errors and Exceptions in Python" href="week4.html" />
-    <link rel="prev" title="Chapter 2 Python Fundamentals" href="week2.html" />
+    <link rel="next" title="Chapter 4" href="week4.html" />
+    <link rel="prev" title="Chapter 2" href="week2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,10 +159,12 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="week1.html"><div align="center">Chapter 1 <br/>An Introductory Guide to Python</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week2.html"><div align="center">Chapter 2 <br/>Python Fundamentals </div></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><div align="center">Chapter 3<br/>Control Flow </div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week4.html"><div align="center">Chapter 4<br/>Errors and Exceptions in Python </div></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week1.html"><div align="center">Chapter 1</div></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week2.html"><div align="center">Chapter 2</div></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><div align="center">Chapter 3</div></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week4.html"><div align="center">Chapter 4</div></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week8.html"><div align="center">Chapter 5</div></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week9_Numpy.html"><div align="center">Chapter 6</div></a></li>
 </ul>
 
     </div>
@@ -346,7 +348,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><div align="center">Chapter 3<br>Control Flow </div></h1>
+    <h1><div align="center">Chapter 3</div></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -356,7 +358,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#div-align-center-loops-and-conditional-statements-br-and-some-coding-conventions-div"><div align="center">Loops and Conditional Statements <br/>and Some Coding Conventions</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#div-align-center-control-flow-div"><div align="center">Control Flow </div></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#div-align-center-loops-and-conditional-statements-br-and-some-coding-conventions-div"><div align="center">Loops and Conditional Statements <br/>and Some Coding Conventions</div></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-blue-learning-objectives-span"><span style="color:blue"> Learning Objectives:</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-the-action">1. Controlling the Action:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precursor-to-conditional-statements">1.1 Precursor to Conditional Statements</a></li>
@@ -437,11 +442,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="div-align-center-chapter-3-br-control-flow-div">
-<h1><div align="center">Chapter 3<br>Control Flow </div><a class="headerlink" href="#div-align-center-chapter-3-br-control-flow-div" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="div-align-center-chapter-3-div">
+<h1><div align="center">Chapter 3</div><a class="headerlink" href="#div-align-center-chapter-3-div" title="Permalink to this heading">#</a></h1>
+<section id="div-align-center-control-flow-div">
+<h2><div align="center">Control Flow </div><a class="headerlink" href="#div-align-center-control-flow-div" title="Permalink to this heading">#</a></h2>
 <section id="div-align-center-loops-and-conditional-statements-br-and-some-coding-conventions-div">
-<h2><div align="center">Loops and Conditional Statements <br>and Some Coding Conventions</div><a class="headerlink" href="#div-align-center-loops-and-conditional-statements-br-and-some-coding-conventions-div" title="Permalink to this heading">#</a></h2>
+<h3><div align="center">Loops and Conditional Statements <br>and Some Coding Conventions</div><a class="headerlink" href="#div-align-center-loops-and-conditional-statements-br-and-some-coding-conventions-div" title="Permalink to this heading">#</a></h3>
 <p><strong><div align="center"> Author: Dr. Suborna Ahmed</div></strong></p>
+</section>
 </section>
 <section id="span-style-color-blue-learning-objectives-span">
 <h2><span style="color:blue"> Learning Objectives:</span><a class="headerlink" href="#span-style-color-blue-learning-objectives-span" title="Permalink to this heading">#</a></h2>
@@ -578,7 +586,7 @@ True
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">qt</span><span class="o">/</span><span class="n">qy37fy6s3c1553y2k74063pr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_77602</span><span class="o">/</span><span class="mf">232272545.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">qt</span><span class="o">/</span><span class="n">qy37fy6s3c1553y2k74063pr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_28846</span><span class="o">/</span><span class="mf">232272545.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Example for input function</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">test1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your first name:&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi &#39;</span><span class="p">,</span>  <span class="n">test1</span><span class="p">)</span>
@@ -930,15 +938,12 @@ The conditional statements first check if the student if from the same departmen
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;not both of them are positive&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
 <ol class="arabic simple">
 <li><p>Try using ‘or’ instead of ‘and’ in the above example.</p></li>
 <li><p>Change the values of x &amp; y.</p></li>
 <li><p>Change the statement to <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code> clauses (use at least one elif condition and you can change the values of x and y to check your statement).</p></li>
 <li><p>Change the statement to include <code class="docutils literal notranslate"><span class="pre">nested</span> <span class="pre">if</span> <span class="pre">conditions</span></code>.</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -947,7 +952,7 @@ The conditional statements first check if the student if from the same departmen
 </div>
 </div>
 </div>
-<p>See <a class="reference internal" href="#section-label-3-1"><span class="std std-ref">solutions for activity 1</span></a> at the end.</p>
+<p>See <a class="reference internal" href="#section-label-3-1"><span class="std std-ref">solution for activity 1</span></a> at the end.</p>
 </section>
 </section>
 </section>
@@ -1354,7 +1359,7 @@ o
 <p><strong>Hint:
 if (x % y == 0), x is divisible by y</strong></p>
 </div>
-<p>See <a class="reference internal" href="#section-label-3-2"><span class="std std-ref">solutions for activity 2</span></a> at the end.</p>
+<p>See <a class="reference internal" href="#section-label-3-2"><span class="std std-ref">solution for activity 2</span></a> at the end.</p>
 </section>
 </section>
 <section id="list-comprehensions">
@@ -1479,7 +1484,7 @@ g3= [6, 8, 10, 12, 14, 16, 18]
 </div>
 </div>
 </div>
-<p>See <a class="reference internal" href="#section-label-3-3"><span class="std std-ref">solutions for activity 3</span></a> at the end.</p>
+<p>See <a class="reference internal" href="#section-label-3-3"><span class="std std-ref">solution for activity 3</span></a> at the end.</p>
 </section>
 </section>
 <section id="functions-in-python">
@@ -1720,7 +1725,7 @@ Suppose the list of number is not empty and includes at least two elements.</p>
 <p>After defined the function, use the function to find the max and min number for this list:
 <code class="docutils literal notranslate"><span class="pre">[-8,</span> <span class="pre">9,</span> <span class="pre">0,</span> <span class="pre">5,</span> <span class="pre">2,</span> <span class="pre">10]</span></code></p>
 </div>
-<p>See <a class="reference internal" href="#section-label-3-4"><span class="std std-ref">solutions for activity 4</span></a> at the end.</p>
+<p>See <a class="reference internal" href="#section-label-3-4"><span class="std std-ref">solution for activity 4</span></a> at the end.</p>
 </section>
 </section>
 <section id="function-lambda">
@@ -2689,7 +2694,7 @@ We then perform various arithmetic operations on these int and float objects usi
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><div align="center">Chapter 2 <br>Python Fundamentals </div></p>
+        <p class="prev-next-title"><div align="center">Chapter 2</div></p>
       </div>
     </a>
     <a class="right-next"
@@ -2697,7 +2702,7 @@ We then perform various arithmetic operations on these int and float objects usi
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><div align="center">Chapter 4<br>Errors and Exceptions in Python </div></p>
+        <p class="prev-next-title"><div align="center">Chapter 4</div></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2719,7 +2724,10 @@ We then perform various arithmetic operations on these int and float objects usi
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#div-align-center-loops-and-conditional-statements-br-and-some-coding-conventions-div"><div align="center">Loops and Conditional Statements <br/>and Some Coding Conventions</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#div-align-center-control-flow-div"><div align="center">Control Flow </div></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#div-align-center-loops-and-conditional-statements-br-and-some-coding-conventions-div"><div align="center">Loops and Conditional Statements <br/>and Some Coding Conventions</div></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-blue-learning-objectives-span"><span style="color:blue"> Learning Objectives:</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-the-action">1. Controlling the Action:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precursor-to-conditional-statements">1.1 Precursor to Conditional Statements</a></li>
