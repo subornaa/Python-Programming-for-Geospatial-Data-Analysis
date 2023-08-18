@@ -1,11 +1,24 @@
-# Welcome to your Jupyter Book
+# Welcome to Geospatial Data Analysis
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Author<br>
+Dr. Suborna Ahmed, Forest Resources Management, UBC
 
-Check out the content pages bundled with this sample book to see more.
+## Introduction
 
-```{tableofcontents}
+Welcome to .....
+
+![Road Map](roadmap.png)
+
+## Outline
+
+### License
+
+```{admonition} **How to cite**
+:class: tip
+
+Ahmed, S., & Howard, C. (2023). Application of Computer Technology and Document Processing in Forestry Management. Add DOI.
+
 ```
+
+**Version history** <br>
+Materials were prepared for this book at the Faculty of Forestry, University of British Columbia, August, 2023.

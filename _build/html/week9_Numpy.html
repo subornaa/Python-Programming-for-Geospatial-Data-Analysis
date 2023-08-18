@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 6 &#8212; My sample book</title>
+    <title>Chapter 6 &#8212; Geospatial Data Analysis</title>
   
   
   
@@ -64,6 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'week9_Numpy';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 7" href="week10_Pandas.html" />
     <link rel="prev" title="Chapter 5" href="week8.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -135,14 +136,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
+    <p class="title logo__title">Geospatial Data Analysis</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -151,7 +146,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Welcome to Geospatial Data Analysis
                 </a>
             </li>
         </ul>
@@ -162,6 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="week4.html"><div align="center">Chapter 4</div></a></li>
 <li class="toctree-l1"><a class="reference internal" href="week8.html"><div align="center">Chapter 5</div></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><div align="center">Chapter 6</div></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week10_Pandas.html"><div align="center">Chapter 7</div></a></li>
 </ul>
 
     </div>
@@ -216,7 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/RowanYuwenLUO/JupyterBook-gem530/tree/master" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -233,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fweek9_Numpy.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/RowanYuwenLUO/JupyterBook-gem530/tree/master/issues/new?title=Issue%20on%20page%20%2Fweek9_Numpy.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -474,20 +470,6 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">rasterio.plot</span> <span class="kn">import</span> <span class="n">show</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">qt</span><span class="o">/</span><span class="n">qy37fy6s3c1553y2k74063pr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_28889</span><span class="o">/</span><span class="mf">2492554881.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">rasterio</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;rasterio&#39;
 </pre></div>
 </div>
 </div>
@@ -790,7 +772,7 @@ NumPy, a powerful library in Python, provides a rich and efficient set of functi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.52314682, 0.91634317, 0.93216445, 0.75270922, 0.04092002])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.17238081, 0.69910348, 0.52631051, 0.25169902, 0.4078862 ])
 </pre></div>
 </div>
 </div>
@@ -805,8 +787,8 @@ NumPy, a powerful library in Python, provides a rich and efficient set of functi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.63290376, -0.15806693,  0.32689421, -2.86363896, -0.2398887 ,
-       -0.47365752, -0.0596955 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.44447016,  1.04908361,  0.65522892,  0.82775758, -0.50098398,
+        0.43057255, -1.24182885])
 </pre></div>
 </div>
 </div>
@@ -824,7 +806,7 @@ NumPy, a powerful library in Python, provides a rich and efficient set of functi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3 4 1 2 3 0 0 4 4 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 0 2 3 2 2 0 0 3 1]
 int64
 </pre></div>
 </div>
@@ -838,7 +820,7 @@ int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 1, 1, 0, 1, 1, 1, 1])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 1, 0, 1, 1, 0, 1, 1, 1])
 </pre></div>
 </div>
 </div>
@@ -851,7 +833,7 @@ int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 1, 0, 1, 0, 2, 0, 0, 1, 0, 0, 2, 1, 0, 0, 1, 0, 0, 2, 0])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 0, 0, 2, 2, 2, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 1])
 </pre></div>
 </div>
 </div>
@@ -866,9 +848,9 @@ int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 2 1 2]
- [0 1 0 1 1]
- [0 2 2 1 0]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2 2 1 1 0]
+ [1 0 1 0 1]
+ [2 1 0 2 2]] 
  dimension= 2
 </pre></div>
 </div>
@@ -885,8 +867,8 @@ int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[8 6 7 1]
- [6 7 0 7]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[8 8 7 1]
+ [9 6 2 6]]
 </pre></div>
 </div>
 </div>
@@ -1317,7 +1299,7 @@ y=[[ 2  2  4]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-42-a244abc5643d&gt;:2: RuntimeWarning: invalid value encountered in true_divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_98832/4262187899.py:2: RuntimeWarning: invalid value encountered in divide
   q / q # zero division problem
 </pre></div>
 </div>
@@ -1434,6 +1416,18 @@ Note: f array look like the following:
 <span class="kn">import</span> <span class="nn">matplotlib.cm</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">colorspacious</span> <span class="kn">import</span> <span class="n">cspace_converter</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">qt</span><span class="o">/</span><span class="n">qy37fy6s3c1553y2k74063pr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_98832</span><span class="o">/</span><span class="mf">3637304952.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.cm</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">colorspacious</span> <span class="kn">import</span> <span class="n">cspace_converter</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;colorspacious&#39;
 </pre></div>
 </div>
 </div>
@@ -2140,6 +2134,15 @@ dim of f= 3
         <p class="prev-next-title"><div align="center">Chapter 5</div></p>
       </div>
     </a>
+    <a class="right-next"
+       href="week10_Pandas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><div align="center">Chapter 7</div></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -2213,7 +2216,7 @@ dim of f= 3
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Dr. Suborna Ahmed
 </p>
 
   </div>

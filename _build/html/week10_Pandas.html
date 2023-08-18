@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 7 &#8212; My sample book</title>
+    <title>Chapter 7 &#8212; Geospatial Data Analysis</title>
   
   
   
@@ -135,14 +135,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
+    <p class="title logo__title">Geospatial Data Analysis</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -151,7 +145,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Welcome to Geospatial Data Analysis
                 </a>
             </li>
         </ul>
@@ -217,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/RowanYuwenLUO/JupyterBook-gem530/tree/master" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -234,7 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fweek10_Pandas.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/RowanYuwenLUO/JupyterBook-gem530/tree/master/issues/new?title=Issue%20on%20page%20%2Fweek10_Pandas.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -845,20 +839,6 @@ Name: Name, dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">qt</span><span class="o">/</span><span class="n">qy37fy6s3c1553y2k74063pr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_7647</span><span class="o">/</span><span class="mf">1136024241.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#import gdal</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">rasterio</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">matplotlib</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;rasterio&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="create-a-dataframe">
@@ -1141,10 +1121,6 @@ dates=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_7421/359791568.py:2: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
-  d3= d1.append(d2)
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1812,6 +1788,7 @@ max     50.00000     NaN  22.700000  21.460000
 <li><p>Four features were measured from each sample: the length and the width of the sepals and petals, in centimetres.</p></li>
 </ul>
 <p><img alt="isir_data.png" src="_images/isir_data.png" /></p>
+<p>Reference: <a class="reference external" href="http://www.lac.inpe.br/~rafael.santos/Docs/CAP394/WholeStory-Iris.html">http://www.lac.inpe.br/~rafael.santos/Docs/CAP394/WholeStory-Iris.html</a></p>
 </section>
 <section id="install-libraries-and-iris-data">
 <h4>1.2.4. Install Libraries and Iris Data<a class="headerlink" href="#install-libraries-and-iris-data" title="Permalink to this heading">#</a></h4>
@@ -1820,6 +1797,18 @@ max     50.00000     NaN  22.700000  21.460000
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load here or from Command Prompt</span>
 <span class="c1">#!pip install -U scikit-learn</span>
 <span class="kn">import</span> <span class="nn">sklearn</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">qt</span><span class="o">/</span><span class="n">qy37fy6s3c1553y2k74063pr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_98978</span><span class="o">/</span><span class="mf">1718560162.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># load here or from Command Prompt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#!pip install -U scikit-learn</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">sklearn</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -4310,7 +4299,7 @@ Name: colors, Length: 150, dtype: object
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Dr. Suborna Ahmed
 </p>
 
   </div>
