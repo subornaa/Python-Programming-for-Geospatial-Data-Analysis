@@ -11,5 +11,7 @@ chapters:
   - file: week8
   - file: week9_Numpy
   - file: week10_Pandas
+  - file: week11_GeoPandas
+  
   
   

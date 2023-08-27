@@ -1,0 +1,1892 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 2: Python Fundamentals &#8212; Python Programming for Geospatial Data Analysis</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'week2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 3: Control Flow" href="week3.html" />
+    <link rel="prev" title="Chapter 1: An Introductory Guide to Python" href="week1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Python Programming for Geospatial Data Analysis</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Python Programming for Geospatial Data Analysis
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week1.html"><div align="center">Chapter 1: An Introductory Guide to Python</div></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><div align="center">Chapter 2: Python Fundamentals </div></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week3.html"><div align="center">Chapter 3: Control Flow</div></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week4.html"><div align="center">Chapter 4: Errors and Exceptions in Python</div></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week8.html"><div align="center">Chapter 5: Python Plotting using Matplotlib</div></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week9_Numpy.html"><div align="center">Chapter 6: Numpy and Rasterio</div></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week10_Pandas.html"><div align="center">Chapter 7: Data Formatting and Summarizing with Pandas</div></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/RowanYuwenLUO/JupyterBook-gem530/tree/master" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/RowanYuwenLUO/JupyterBook-gem530/tree/master/issues/new?title=Issue%20on%20page%20%2Fweek2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/week2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><div align="center">Chapter 2: Python Fundamentals </div></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#div-align-center-exploring-built-in-functions-string-manipulation-br-numeric-operations-and-data-structures-div"><div align="center">Exploring Built-in Functions, String Manipulation, <br/>Numeric Operations, and Data Structures</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-blue-learning-objectives-span"><span style="color:blue"> Learning Objectives:</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions-in-python">Built-in Functions in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions-in-python-for-strings">1. Built-in Functions in Python for Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-string-operators">1.1 Common String Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-string-variable">1.2 Slicing String Variable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions-in-python-for-numerics">2. Built-in Functions in Python for Numerics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">2.1 Arithmetic Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-operators">2.2 Assignment Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">2.3 Comparison Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">2.4 Logical Operators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-more-note-on-basic-data-types">3. One More Note on Basic Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-data-structures">4. Complex Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">4.1 Lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">4.2 Tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">4.3 Dictionaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">Solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-1">Activity 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-2">Activity 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-3">Activity 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-4">Activity 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-5">Activity 5</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="div-align-center-chapter-2-python-fundamentals-div">
+<h1><div align="center">Chapter 2: Python Fundamentals </div><a class="headerlink" href="#div-align-center-chapter-2-python-fundamentals-div" title="Permalink to this heading">#</a></h1>
+<section id="div-align-center-exploring-built-in-functions-string-manipulation-br-numeric-operations-and-data-structures-div">
+<h2><div align="center">Exploring Built-in Functions, String Manipulation, <br>Numeric Operations, and Data Structures</div><a class="headerlink" href="#div-align-center-exploring-built-in-functions-string-manipulation-br-numeric-operations-and-data-structures-div" title="Permalink to this heading">#</a></h2>
+<p><strong><div align="center">Author: Dr. Suborna Ahmed</div></strong></p>
+</section>
+<section id="span-style-color-blue-learning-objectives-span">
+<h2><span style="color:blue"> Learning Objectives:</span><a class="headerlink" href="#span-style-color-blue-learning-objectives-span" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Builtin Functions in Python:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
+<ul>
+<li><p>Common String Operators</p></li>
+<li><p>Slicing String Variable</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Numeric</span></code></p>
+<ul>
+<li><p>Arithmetic</p></li>
+<li><p>Assignment</p></li>
+<li><p>Comparison</p></li>
+<li><p>Logical Operators</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Basic Data Structures</p></li>
+<li><p>Complex Data Structures</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lists</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tuples</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dictionaries</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="built-in-functions-in-python">
+<h2>Built-in Functions in Python<a class="headerlink" href="#built-in-functions-in-python" title="Permalink to this heading">#</a></h2>
+<p>Many methods are pre-defined in the Python standard library and cover a wide range of operations. We will learn some basic functions to perform common tasks such as manipulating strings, converting data types, working with mathematical calculations, etc. and to work with basic data types in Python. Understanding and utilizing built-in functions will enhance your productivity and enable you to write efficient and concise code.</p>
+<ul class="simple">
+<li><p>The following links are additional sources where you can find more helpful built-in functions.</p></li>
+</ul>
+<ul class="simple">
+<li><p>String:
+<a class="reference external" href="https://docs.python.org/2.6/library/string.html">https://docs.python.org/2.6/library/string.html</a></p></li>
+<li><p>Numeric
+<a class="reference external" href="https://docs.python.org/3.4/library/operator.html#mapping-operators-to-functions">https://docs.python.org/3.4/library/operator.html#mapping-operators-to-functions</a></p></li>
+</ul>
+</section>
+<section id="built-in-functions-in-python-for-strings">
+<h2>1. Built-in Functions in Python for Strings<a class="headerlink" href="#built-in-functions-in-python-for-strings" title="Permalink to this heading">#</a></h2>
+<p>We will explore common string operators that allow you to concatenate, repeat, find substrings, and format strings. Understanding how to slice a string variable will enable you to extract specific portions of text based on index positions.</p>
+<section id="common-string-operators">
+<h3>1.1 Common String Operators<a class="headerlink" href="#common-string-operators" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>string.join(x)</strong>: returns a string concatenated with the elements of x.</p></li>
+<li><p><strong>string.find(sub)</strong>: returns the first index where the substring sub is found such that sub is wholly contained between the start and end.</p></li>
+<li><p><strong>string.lower(s)</strong>: returns a copy of s, but with upper case letters converted to lower case.</p></li>
+<li><p><strong>string.upper(s)</strong>: returns a copy of s, but with lower case letters converted to upper case.</p></li>
+<li><p><strong>string.replace(old, new, number)</strong>: returns a copy of string with all occurrences of substring old replaced by new. Here number is optional which represents how many times it will replace.</p></li>
+</ul>
+<ul class="simple">
+<li><p>In the first example below: the join() method is used on the string y with the argument x. When join() is called on a string, it concatenates the elements of an iterable (in this case, the string x) with the string on which the method is called (in this case, the string y). It <code class="docutils literal notranslate"><span class="pre">inserts</span> <span class="pre">the</span> <span class="pre">string</span> <span class="pre">y</span> <span class="pre">between</span> <span class="pre">each</span> <span class="pre">element</span> <span class="pre">of</span> <span class="pre">x</span></code>.</p></li>
+<li><p>In the second example: the join() method is used on the string k1 with the argument k2. Since join() expects an iterable as its argument, it treats the string k2 as a sequence of characters. In this case, k1.join(k2) will result in the string “oSUBLsUBnUBa”, as the <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">k1</span> <span class="pre">is</span> <span class="pre">inserted</span> <span class="pre">between</span> <span class="pre">each</span> <span class="pre">character</span> <span class="pre">of</span> <span class="pre">k2</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># string.join()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">k1</span> <span class="o">=</span> <span class="s1">&#39;SUB&#39;</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="s2">&quot;orna&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">k1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">k2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1-2-3
+oSUBrSUBnSUBa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Note</p>
+<p><strong>index starts at 0 in Python !</strong></p>
+<p>In Python, an index refers to the position of an element within a sequence, such as a list, string, or tuple. It allows us to access and manipulate individual elements based on their position.
+<br>
+Python uses zero-based indexing, meaning the first element in a sequence is assigned an index of 0, the second element has an index of 1, and so on.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># string.find(sub)</span>
+<span class="n">weather</span> <span class="o">=</span> <span class="s2">&quot;Windy Weather&quot;</span>
+<span class="n">n_index</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n_index: &quot;</span><span class="p">,</span> <span class="n">n_index</span><span class="p">)</span> <span class="c1"># locates the position (index) of the letter &quot;n&quot; for the first time</span>
+<span class="n">t_index</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t_index: &quot;</span><span class="p">,</span> <span class="n">t_index</span><span class="p">)</span> <span class="c1"># locates the position (index) of the letter &quot;t&quot; for the first time</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n_index:  2
+t_index:  9
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>The code below explains how to count the index in Python. You don’t need to understand the code for `Loop`` yet, we will discuss it in Week3.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;Windy Weather&quot;</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The letter &#39;</span><span class="si">{</span><span class="n">letter</span><span class="si">}</span><span class="s2">&#39; is at index </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The letter &#39;W&#39; is at index 0.
+The letter &#39;i&#39; is at index 1.
+The letter &#39;n&#39; is at index 2.
+The letter &#39;d&#39; is at index 3.
+The letter &#39;y&#39; is at index 4.
+The letter &#39; &#39; is at index 5.
+The letter &#39;W&#39; is at index 6.
+The letter &#39;e&#39; is at index 7.
+The letter &#39;a&#39; is at index 8.
+The letter &#39;t&#39; is at index 9.
+The letter &#39;h&#39; is at index 10.
+The letter &#39;e&#39; is at index 11.
+The letter &#39;r&#39; is at index 12.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># string.lower(): convert all characters to lower case</span>
+<span class="c1"># string.upper(): convert all characters to upper case</span>
+
+<span class="n">k1</span> <span class="o">=</span> <span class="s1">&#39;Sub&#39;</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="s2">&quot;orna&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">k1</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">k2</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+
+<span class="n">k</span><span class="o">=</span><span class="n">k1</span><span class="o">+</span><span class="n">k2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sub
+ORNA
+Suborna
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-activity-1 admonition">
+<p class="admonition-title">Activity 1</p>
+<p>Investigate <strong>string.replace(old, new, number)</strong> and write a code with the provided <code class="docutils literal notranslate"><span class="pre">exa</span></code> string variable below.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exa</span> <span class="o">=</span> <span class="s2">&quot;this is an example&quot;</span>
+<span class="c1"># hint: to get help on Jupyter, you can type the function and with a question mark after it and run the code.</span>
+<span class="c1"># write codes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>See <a class="reference internal" href="#section-label-2-1"><span class="std std-ref">solution for activity 1</span></a> at the end.</p>
+</section>
+<section id="slicing-string-variable">
+<h3>1.2 Slicing String Variable<a class="headerlink" href="#slicing-string-variable" title="Permalink to this heading">#</a></h3>
+<p>In Python, slicing can be performed on strings, allowing you to <strong>extract substrings or specific portions of a string</strong>. Slicing a string allows you to create a new string that contains only the selected characters. The resulting substring is a new string object and does not affect the original string.</p>
+<p>Slicing a string follows the same <strong>general syntax</strong> as slicing any sequence in Python: <code class="docutils literal notranslate"><span class="pre">string[start:end:step]</span></code>.</p>
+<ul class="simple">
+<li><p>When slicing a string, the character at <strong>the start index is included</strong> in the slice, but the character at <strong>the end index is not</strong>. It means that string[start:end] extracts characters from start up to, but not including, the character at end.</p></li>
+<li><p>Indices can be specified using positive or negative numbers. <strong>Positive indices</strong> count from the beginning of the string <strong>(starting from 0)</strong>, while <strong>negative indices</strong> count from the end of the string <strong>(starting from -1)</strong>.</p></li>
+<li><p>The <strong>step value determines the spacing between characters</strong> in the slice. A positive step value moves forward through the string, while a negative step value moves backward. For example, a step of 2 would select every second character in the slice.</p></li>
+<li><p>Default Values: If you omit the start index, it defaults to the beginning of the string. If you omit the end index, it defaults to the end of the string. If you omit the step value, it defaults to 1.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># investigate the outputs for the following example</span>
+<span class="n">p</span> <span class="o">=</span> <span class="s1">&#39;Hamilton&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="c1"># count the length of characters in the string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># access the character at index 0 in the string p, corresponds to the first character of the string.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># extracts a substring from the string p, starting from index 0 up to, but not including, index 2</span>
+<span class="c1"># the first and second character of the string are extracted</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ha
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># negative indices count from the end of the string,</span>
+<span class="c1"># accesses the character at index -5 in the string p. </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Except String, we can also use slicing with List.</strong></p>
+<ul class="simple">
+<li><p>Index starts at 0 !</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>   <span class="c1"># slicing from index 1 to 4(exclusive)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>    <span class="c1"># slicing starts from the beginning, index 0, to index 3(exlusive)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>    <span class="c1"># slicing starts from index 2 (inclusive) to the end of the list </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>   <span class="c1"># slicing skips every second element in the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># negative step value of -1 indicating a reverse order.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 30]
+[0, 10, 20]
+[20, 30, 40, 50]
+[0, 20, 40]
+[50, 40, 30, 20, 10, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-activity-2 admonition">
+<p class="admonition-title">Activity 2</p>
+<p>What would be the output? Create a Markdown chunk under this one and explain the output:</p>
+<ul class="simple">
+<li><p>s = ‘GEM 530’</p></li>
+<li><p><code>s[-2]</code></p></li>
+<li><p><code>s[3]</code></p></li>
+</ul>
+</div>
+<p>See <a class="reference internal" href="#section-label-2-2"><span class="std std-ref">solution for activity 2</span></a> at the end.</p>
+</section>
+</section>
+<section id="built-in-functions-in-python-for-numerics">
+<h2>2. Built-in Functions in Python for Numerics<a class="headerlink" href="#built-in-functions-in-python-for-numerics" title="Permalink to this heading">#</a></h2>
+<p>The numeric section focuses on <strong>arithmetic, assignment, comparison, and logical operators</strong> in Python. We will learn how to perform mathematical calculations using operators such as addition (+), subtraction (-), multiplication (*), division (/), and exponentiation (**). Understanding how to assign values to variables efficiently, compare values and evaluate conditions, and manipulate logical conditions with logical operators.</p>
+<section id="arithmetic-operators">
+<h3>2.1 Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this heading">#</a></h3>
+<p>Arithmetic operators are used to perform mathematical calculations in Python. In week 1, we have seen some examples for using basic math calculator in Python, including: <code class="docutils literal notranslate"><span class="pre">addition</span> <span class="pre">(+),</span> <span class="pre">subtraction</span> <span class="pre">(-),</span> <span class="pre">multiplication</span> <span class="pre">(*),</span> <span class="pre">division</span> <span class="pre">(/),</span> <span class="pre">and</span> <span class="pre">exponentiation</span> <span class="pre">(**)</span></code>. Now we will introduce two more commonly used arithmetic operators:</p>
+<ul class="simple">
+<li><p>Modulus (%): Returns the remainder of the division of the left operand by the right operand.</p></li>
+<li><p>Floor Division (//): Returns the result of the division, rounded down to the nearest whole number.</p></li>
+</ul>
+<p>For the following example, let’s say, <code>a = 5</code> &amp; <code>b = 2</code>.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Arithmetic Operators</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>+</p></td>
+<td class="text-left"><p>Addition</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(a + b = 7\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>-</p></td>
+<td class="text-left"><p>Subtraction</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(a - b = 3\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>*</p></td>
+<td class="text-left"><p>Multiplication</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(a \times b = 10\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>/</p></td>
+<td class="text-left"><p>Division</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(a \div b = 2.5\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>**</p></td>
+<td class="text-left"><p>Exponentiation: <br>performs exponential (power) calculation on operatos</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(a ^ b = 25\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>%</p></td>
+<td class="text-left"><p>Modulus: <br>divides left hand operand by right hand operand and returns remainder</p></td>
+<td class="text-left"><p>a <span class="math notranslate nohighlight">\(\%\)</span> b = 1</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>//</p></td>
+<td class="text-left"><p>Floor Division: <br>the division of operands where the result is the quotient in which the <strong>digits after the decimal point are removed</strong></p></td>
+<td class="text-left"><p><p>9//2 is equal to 4, <br>9.0//2.0 is equal to 4.0</p></p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a + b = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a - b = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a * b = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a / b = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a ** b = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">**</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a % b = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">%</span><span class="k">b</span>)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a // b = &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">//</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a + b =  7
+a - b =  3
+a * b =  10
+a / b =  2.5
+a ** b =  25
+a % b =  1
+a // b =  2
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>In Python 2, when dividing integers, the result will be an integer.</p></li>
+<li><p>In Python 3, the result includes decimals.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># in Python 2 it will give 2 only, while Python 3 will generate 2.5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="assignment-operators">
+<h3>2.2 Assignment Operators<a class="headerlink" href="#assignment-operators" title="Permalink to this heading">#</a></h3>
+<p>Assignment operators are used to assign values to variables. Here are the commonly used assignment operators:</p>
+<ul class="simple">
+<li><p>= (Assign): Assigns the value on the right to the variable on the left.</p></li>
+<li><p>+= (Add and Assign): Adds the value on the right to the variable on the left and assigns the result to the variable.</p></li>
+<li><p>-= (Subtract and Assign): Subtracts the value on the right from the variable on the left and assigns the result to the variable.</p></li>
+<li><p>*= (Multiply and Assign): Multiplies the variable on the left by the value on the right and assigns the result to the variable.</p></li>
+<li><p>/= (Divide and Assign): Divides the variable on the left by the value on the right and assigns the result to the variable.</p></li>
+</ul>
+<div class="warning admonition">
+<p class="admonition-title">Note</p>
+<p><strong>=(Assign) and ==(Equals) are different operators in Python.</strong></p>
+</div>
+<blockquote>
+<span style="color:blue">Assignment Operator (=)</span>:
+<p>The assignment operator is used to assign the value on the right-hand side to the variable on the left-hand side.
+The assignment operator is a fundamental part of variable initialization and value assignment in Python.</p>
+<p>Example: x = 5 assigns the value 5 to the variable x.</p>
+</blockquote>
+<blockquote>
+<span style="color:blue">Equality Operator (==)</span>:
+<p>The equality operator is used to compare if two values on both sides of the operator are equal or not.
+It returns a Boolean value (True or False) based on the comparison result.</p>
+<p>Example: x == 5 compares the value of x to 5 and returns True if they are equal, and False otherwise.</p>
+</blockquote>
+<p>For the following example, let’s say, <code>a = 5</code> &amp; <code>b = 2</code>.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Arithmetic Operators</p></th>
+<th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Example</p></th>
+<th class="head text-left"><p>Meaning</p></th>
+<th class="head text-left"><p>Result of a</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>=</strong></p></td>
+<td class="text-left"><p><strong>Simple assignment</strong></p></td>
+<td class="text-left"><p><strong>a = b</strong></p></td>
+<td class="text-left"><p><strong>Set a as b</strong></p></td>
+<td class="text-left"><p><strong>2</strong></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>+=</p></td>
+<td class="text-left"><p>Add AND</p></td>
+<td class="text-left"><p>a += b</p></td>
+<td class="text-left"><p>a = a + b</p></td>
+<td class="text-left"><p>7</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>-=</p></td>
+<td class="text-left"><p>Subtract AND</p></td>
+<td class="text-left"><p>a -= b</p></td>
+<td class="text-left"><p>a = a - b</p></td>
+<td class="text-left"><p>3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>*=</p></td>
+<td class="text-left"><p>Multiply AND</p></td>
+<td class="text-left"><p>a *= b</p></td>
+<td class="text-left"><p>a = a * b</p></td>
+<td class="text-left"><p>10</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>/=</p></td>
+<td class="text-left"><p>Divide AND</p></td>
+<td class="text-left"><p>a /= b</p></td>
+<td class="text-left"><p>a = a / b</p></td>
+<td class="text-left"><p>2.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>%=</p></td>
+<td class="text-left"><p>Modulus AND</p></td>
+<td class="text-left"><p>a %= b</p></td>
+<td class="text-left"><p>a = a % b</p></td>
+<td class="text-left"><p>1</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>**=</p></td>
+<td class="text-left"><p>Exponent AND</p></td>
+<td class="text-left"><p>a **= b</p></td>
+<td class="text-left"><p>a = a ** b</p></td>
+<td class="text-left"><p>25</p></td>
+</tr>
+</tbody>
+</table>
+<p><span style="color:blue"><font size="3">= after the operator: +, -, *, /, … means a is reassigned</font></span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assignment Operators</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#operation&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="c1"># 1. </span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="c1"># the value of &#39;b&#39; is assigned to &#39;a&#39; using the assignment operator (=). </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#1: a=b&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 2. </span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="n">b</span> <span class="c1"># adds the value of &#39;b&#39; to the current value of &#39;a&#39; and assigns the result back to &#39;a&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#2: a+=b&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 3. </span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">-=</span> <span class="n">b</span> <span class="c1"># subtracts the value of &#39;b&#39; from the current value of &#39;a&#39; and assigns the result back to &#39;a&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#3: a-=b&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 4.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">*=</span> <span class="n">b</span> <span class="c1"># multiplies the current value of &#39;a&#39; by the value of &#39;b&#39; and assigns the result back to &#39;a&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#4: a*=b&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 5.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">/=</span> <span class="n">b</span> <span class="c1"># divides the current value of &#39;a&#39; by the value of &#39;b&#39; and assigns the result back to &#39;a&#39; </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#5: a/=b&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 6.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">%=</span> <span class="n">b</span> <span class="c1"># calculates the remainder when &#39;a&#39; is divided by &#39;b&#39; and assigns the result back to &#39;a&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#6: a%=b&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 7.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">**=</span> <span class="n">b</span> <span class="c1"># raises &#39;a&#39; to the power of &#39;b&#39; and assigns the result back to &#39;a&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#7: a**=b&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#operation a b
+#1: a=b 2 2
+#2: a+=b 7 2
+#3: a-=b 3 2
+#4: a*=b 10 2
+#5: a/=b 2.5 2
+#6: a%=b 1 2
+#7: a**=b 25 2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparison-operators">
+<h3>2.3 Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permalink to this heading">#</a></h3>
+<p>Comparison operators are used to compare the values of variables. They return <strong>Boolean values, either True or False</strong>. Here are the commonly used comparison operators:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(==\)</span> (Equal to): Returns True if the operands are equal.</p></li>
+<li><p><span class="math notranslate nohighlight">\(!=\)</span> (Not equal to): Returns True if the operands are not equal.</p></li>
+<li><p><span class="math notranslate nohighlight">\(&lt;\)</span> (Less than): Returns True if the left operand is less than the right operand.</p></li>
+<li><p><span class="math notranslate nohighlight">\(&gt;\)</span> (Greater than): Returns True if the left operand is greater than the right operand.</p></li>
+<li><p><span class="math notranslate nohighlight">\(&lt;=\)</span> (Less than or equal to): Returns True if the left operand is less than or equal to the right operand.</p></li>
+<li><p><span class="math notranslate nohighlight">\(&gt;=\)</span> (Greater than or equal to): Returns True if the left operand is greater than or equal to the right operand.</p></li>
+</ul>
+<p>For the following example, let’s say, <code>a = 5</code> &amp; <code>b = 2</code>. <br>The output is Boolean Type: <code>TRUE or FALSE</code>.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Comparison Operators</p></th>
+<th class="head text-left"><p>How to use</p></th>
+<th class="head text-left"><p>Dscriptions</p></th>
+<th class="head text-left"><p>Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>==</p></td>
+<td class="text-left"><p>a == b</p></td>
+<td class="text-left"><p>a equals b</p></td>
+<td class="text-left"><p>(a == b) is not true</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>!=</p></td>
+<td class="text-left"><p>a != b</p></td>
+<td class="text-left"><p>a is not equal to b</p></td>
+<td class="text-left"><p>(a != b) is true</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>&lt;</p></td>
+<td class="text-left"><p>a &lt; b</p></td>
+<td class="text-left"><p>a is less than b</p></td>
+<td class="text-left"><p>(a &lt; b) is not true</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>&gt;</p></td>
+<td class="text-left"><p>a &gt; b</p></td>
+<td class="text-left"><p>a is greater than b</p></td>
+<td class="text-left"><p>(a &gt; b) is true</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>&lt;=</p></td>
+<td class="text-left"><p>a &lt;= b</p></td>
+<td class="text-left"><p>a is less than or equal to b</p></td>
+<td class="text-left"><p>(a &lt;= b) is not true</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>&gt;=</p></td>
+<td class="text-left"><p>a &gt;= b</p></td>
+<td class="text-left"><p>a is greater than or equal to b</p></td>
+<td class="text-left"><p>(a &gt;= b) is true</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>is</p></td>
+<td class="text-left"><p>a is b</p></td>
+<td class="text-left"><p>a and b are the same object</p></td>
+<td class="text-left"><p>(a is b) is not true</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>is not</p></td>
+<td class="text-left"><p>a is not b</p></td>
+<td class="text-left"><p>a and b are different objects</p></td>
+<td class="text-left"><p>(a is not b) is true</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>in</p></td>
+<td class="text-left"><p>a in range(b)</p></td>
+<td class="text-left"><p>a is a member of [0,1,2,…,b-1]</p></td>
+<td class="text-left"><p>(a in range(b)) is not true</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>not in</p></td>
+<td class="text-left"><p>a not in range(b)</p></td>
+<td class="text-left"><p>a is not a member of [0,1,2,…,b-1]</p></td>
+<td class="text-left"><p>(a not in range(b)) is true</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comparison Operators</span>
+<span class="c1"># 1. </span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="c1"># the equality operator (==) is used to compare if the values of &#39;a&#39; and &#39;b&#39; equals</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#1: a == b is&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 2. </span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#2: a &lt; b is&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 3. </span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#3: a &gt; b is&quot;</span> <span class="p">,</span> <span class="n">a</span>  <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 4.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#4: a &gt;= b is&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 5.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#5: a &lt;= b is&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 6.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">!=</span>  <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#6: a !=  b is&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">!=</span>  <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 7.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#7: a is b is&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># 8.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#8: a is not b is&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#1: a == b is False
+#2: a &lt; b is False
+#3: a &gt; b is True
+#4: a &gt;= b is True
+#5: a &lt;= b is False
+#6: a !=  b is True
+#7: a is b is False
+#8: a is not b is True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Note</p>
+<p><strong>range and list functions</strong></p>
+<ul class="simple">
+<li><p>The range() function is used to generate a sequence of numbers. In the code below, range(a) creates a range object with a sequence of numbers from 0 to 4 (excluding 5), and range(b) creates a range object with a sequence of numbers from 0 to 1 (excluding 2).</p></li>
+<li><p>The list() function is used to convert the range objects into lists for printing. The list(range(a)) converts the range object range(a) into a list [0, 1, 2, 3, 4], and list(range(b)) converts the range object range(b) into a list [0, 1].</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 9.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list all the members in range(a): &quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list all the members in range(b): &quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="p">)))</span>
+
+<span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#9:a in range(b) =&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#9:b in range(a) =&quot;</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list all the members in range(a):  [0, 1, 2, 3, 4]
+list all the members in range(b):  [0, 1]
+#9:a in range(b) = False
+#9:b in range(a) = True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-activity-3 admonition">
+<p class="admonition-title">Activity 3</p>
+<p>What would be the output?</p>
+<ul class="simple">
+<li><p><code>a = 2</code></p></li>
+<li><p><code>b = 4</code></p></li>
+<li><p><code>a not in range(b)</code></p></li>
+</ul>
+</div>
+<p>See <a class="reference internal" href="#section-label-2-3"><span class="std std-ref">solution for activity 3</span></a> at the end.</p>
+</section>
+<section id="logical-operators">
+<h3>2.4 Logical Operators<a class="headerlink" href="#logical-operators" title="Permalink to this heading">#</a></h3>
+<p>Logical operators are used to manipulate and evaluate logical conditions. They return Boolean results. Here are the commonly used logical operators:</p>
+<ul class="simple">
+<li><p>and: Returns True if both operands are True.</p></li>
+<li><p>or: Returns True if at least one of the operands is True.</p></li>
+<li><p>not: Returns the opposite Boolean value of the operand.</p></li>
+</ul>
+<p>For the following example, let’s say, <code>a = 5</code> &amp; <code>b = 2</code>.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Logical Operators</p></th>
+<th class="head text-left"><p>How to use</p></th>
+<th class="head text-left"><p>Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>and</p></td>
+<td class="text-left"><p>Logical <strong>AND</strong> operator. <br>If both the operands are true / non-zero then the condition becomes true.</p></td>
+<td class="text-left"><p>(a and b) is true</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>or</p></td>
+<td class="text-left"><p>Logical <strong>OR</strong> operator. <br>If any of the two operands are true / non-zero then the condition becomes true.</p></td>
+<td class="text-left"><p>(a or b) is true</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>not</p></td>
+<td class="text-left"><p>called Logical <strong>NOT</strong> operator. <br>Use to <strong>reverses</strong> the logical state of its operand. If a condition is true then Logical NOT operator will make false.</p></td>
+<td class="text-left"><p>not(a and b) is false</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Operators: Logical operators</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">O1</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># a &gt; 3 is True, b &lt; 10 is also True, True and True produces True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(a &gt; 3) and (b &lt; 10) is &quot;</span><span class="p">,</span> <span class="n">O1</span><span class="p">)</span>
+
+<span class="n">O2</span> <span class="o">=</span> <span class="ow">not</span><span class="p">((</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">))</span> <span class="c1"># a &gt; 1 is True, b &lt; 10 is also True, not True produces False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;not((a &gt; 1) and (b &lt; 10))is &quot;</span><span class="p">,</span> <span class="n">O2</span><span class="p">)</span>
+
+<span class="n">O3</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># a &gt; 5 is False, b &lt; 10 is True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(a &gt; 5) or (b &lt; 10) is &quot;</span><span class="p">,</span> <span class="n">O3</span><span class="p">)</span> <span class="c1"># if at least one of the conditions is true, the expression produces True</span>
+
+<span class="n">O4</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># a &gt; 5 is False, b &gt; 10 is False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(a &gt; 3) or (b &lt; 10) is &quot;</span><span class="p">,</span> <span class="n">O4</span><span class="p">)</span> <span class="c1"># the expression produces False since both conditions are false</span>
+
+<span class="n">O5</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># a &gt; 10 is False and b &lt; 10 is True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(a &gt; 10) and (b &lt; 10)&quot;</span><span class="p">,</span> <span class="n">O5</span><span class="p">)</span> <span class="c1"># False and True produces False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;not((a &gt; 10) and (b &lt; 10)) is &quot;</span><span class="p">,</span> <span class="ow">not</span><span class="p">(</span><span class="n">O5</span><span class="p">))</span> <span class="c1"># not(False) produces True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(a &gt; 3) and (b &lt; 10) is  True
+not((a &gt; 1) and (b &lt; 10))is  False
+(a &gt; 5) or (b &lt; 10) is  True
+(a &gt; 3) or (b &lt; 10) is  False
+(a &gt; 10) and (b &lt; 10) False
+not((a &gt; 10) and (b &lt; 10)) is  True
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Logical operators also can work with Boolean values and return Boolean results.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">y</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="c1"># Output: x and y is False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x and y is&#39;</span><span class="p">,</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># Output: x or y is True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x or y is&#39;</span><span class="p">,</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># Output: not x is False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;not x is&#39;</span><span class="p">,</span> <span class="ow">not</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x and y is False
+x or y is True
+not x is False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-activity-4 admonition">
+<p class="admonition-title">Activity 4</p>
+<p>What would be the output?<br></p>
+<ul class="simple">
+<li><p><code>True and False or True</code></p></li>
+<li><p><code>(True or False) and False</code></p></li>
+</ul>
+</div>
+<p>See <a class="reference internal" href="#section-label-2-4"><span class="std std-ref">solution for activity 4</span></a> at the end.</p>
+</section>
+</section>
+<section id="one-more-note-on-basic-data-types">
+<h2>3. One More Note on Basic Data Types<a class="headerlink" href="#one-more-note-on-basic-data-types" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Boolean</span></code>: True or False; Conditional expression results are either True or False.</p></li>
+<li><p><code>type()</code>: use type() to interrogate an object.</p></li>
+<li><p><code>len()</code>: will return the length of characters in a string, number entries in a list, tuple, dictionary (more later) etc..</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic Data Types</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># len() function</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">names</span><span class="o">=</span> <span class="p">(</span><span class="s2">&quot;aa&quot;</span><span class="p">,</span> <span class="s2">&quot;ac&quot;</span><span class="p">)</span> <span class="c1"># a tuple named names is defined with two elements: &quot;aa&quot; and &quot;ac&quot;.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;names length = &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">))</span>
+
+<span class="n">nn</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="c1"># a tuple named nn is defined with three elements: 1, 2, and 3. </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nn length:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nn</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+names length =  2
+nn length: 3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="complex-data-structures">
+<h2>4. Complex Data Structures<a class="headerlink" href="#complex-data-structures" title="Permalink to this heading">#</a></h2>
+<p>In Python we have some built-in data structures:</p>
+<ol class="arabic simple">
+<li><p><strong>List</strong><br>
+Lists are <strong>ordered collections</strong> that can store heterogeneous data types. A sinlge list can contain different types of data, and even a list can be contained in another list. Each item in the list is separated by a comma and the entire list is enclosed in square brackets [.] <br></p></li>
+<li><p><strong>Tuple</strong> <br>
+Tuples are similar to lists but <strong>immutable</strong>. Thus, tuples are useful for data which should not be modified.</p></li>
+<li><p><strong>Dictionary</strong> <br>
+Dictionaries are <strong>key-value pairs</strong> that allow efficient retrieval of data based on keys.</p></li>
+</ol>
+<p>By mastering these basic data structures, you will have a solid foundation for working with <strong>collections of data in Python</strong>.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Container</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Feature</p></th>
+<th class="head text-left"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>list</p></td>
+<td class="text-left"><p>Delimited by [ ]</p></td>
+<td class="text-left"><p>mutable</p></td>
+<td class="text-left"><p>[‘a’, ‘b’, ‘c’]</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>tuple</p></td>
+<td class="text-left"><p>Denoted by parenthesis ( )</p></td>
+<td class="text-left"><p>immutable</p></td>
+<td class="text-left"><p>(‘a’, ‘b’, ‘c’)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>dictionary</p></td>
+<td class="text-left"><p>{key1: value1, <br>key2: value2, <br>…}</p></td>
+<td class="text-left"><p>mutable (but not entries)</p></td>
+<td class="text-left"><p>{ ‘Country’: ‘Canada’, <br>’population’: 38,781,291, <br> ‘provinces’: [‘AB’, ‘BC’, ‘QC’, ‘ON’] }</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Composite Type</strong>
+In those data structures, items are:</p>
+<ul class="simple">
+<li><p>Ordered and sequential.</p></li>
+<li><p>Accessible via an index.</p></li>
+<li><p>Easy for expressing complex operations in a single statement.</p></li>
+</ul>
+<section id="lists">
+<h3>4.1 Lists<a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h3>
+<p>In Python we frequently use lists, and there are many methods associated with lists. It primarily works as a holder.</p>
+<ul class="simple">
+<li><p>We use a <strong>list()</strong> function or directly use a square bracket <strong>[ ]</strong> to create a list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mutable</span></code>: can change after creating it.</p></li>
+<li><p>Operate by <code class="docutils literal notranslate"><span class="pre">order/number</span></code>.</p></li>
+<li><p>Index starts at 0.</p></li>
+<li><p>Can be <code class="docutils literal notranslate"><span class="pre">sliced</span></code> just like a string.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To create a list</span>
+
+<span class="c1"># Option 1: use a list() function</span>
+<span class="n">list1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list 1:&quot;</span><span class="p">,</span> <span class="n">list1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type of list1: &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">list1</span><span class="p">))</span>
+
+<span class="c1"># Option 2: directly use a square bracket [ ]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list 2:&quot;</span><span class="p">,</span> <span class="n">list2</span><span class="p">)</span>
+
+
+<span class="n">list3</span> <span class="o">=</span> <span class="nb">list</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;bunch&#39;</span><span class="p">,</span> <span class="s1">&#39;of&#39;</span><span class="p">,</span> <span class="s1">&#39;things&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list 3:&quot;</span><span class="p">,</span> <span class="n">list3</span><span class="p">)</span>
+
+
+<span class="c1"># A single list can contain different types of data: int, float, string, and another list.</span>
+<span class="n">varName</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;another&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;within a list&#39;</span><span class="p">],</span> <span class="mi">6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;varName:&quot;</span><span class="p">,</span> <span class="n">varName</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list 1: [1, 2, 3]
+type of list1:  &lt;class &#39;list&#39;&gt;
+list 2: [4, 5, 6, 8, 9]
+list 3: [&#39;a&#39;, &#39;bunch&#39;, &#39;of&#39;, &#39;things&#39;]
+varName: [1, 2, &#39;a&#39;, 4.8, &#39;b&#39;, [&#39;another&#39;, &#39;list&#39;, &#39;within a list&#39;], 6]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Slicing</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list2[1]:&quot;</span><span class="p">,</span> <span class="n">list2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;list2[:4]&quot;</span><span class="p">,</span> <span class="n">list2</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list2[1]: 5
+list2[:4] [4, 5, 6, 8]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example to show list is mutable</span>
+
+<span class="n">mutable_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original list:&quot;</span><span class="p">,</span> <span class="n">mutable_list</span><span class="p">)</span>
+
+
+<span class="c1"># the element at index 2, the third element, of the mutable_list is modified by assigning the value 10 to it</span>
+<span class="n">mutable_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Updated list:&quot;</span><span class="p">,</span> <span class="n">mutable_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original list: [1, 2, 3, 4, 5]
+Updated list: [1, 2, 10, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tuples">
+<h3>4.2 Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h3>
+<p>A tuple is an immutable collection of items.</p>
+<ul class="simple">
+<li><p>Tuples are declared with <strong>parentheses ( )</strong>.</p></li>
+<li><p>Declared with parenthesis () or without a parenthesis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Immutable</span></code>: cannot change after creating it.</p></li>
+<li><p>Index starts at 0.</p></li>
+<li><p>Also accessed through <code class="docutils literal notranslate"><span class="pre">slicing</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create tuples</span>
+
+<span class="c1"># Option 1: With parentheses()</span>
+<span class="n">myTuple</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">myTuple</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;myTuple:&quot;</span><span class="p">,</span> <span class="n">myTuple</span><span class="p">)</span>
+
+<span class="c1"># Option 2: Without parentheses()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Type of x:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tuple x: &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+myTuple: (&#39;hi&#39;, &#39;class&#39;)
+Type of x: &lt;class &#39;tuple&#39;&gt;
+tuple x:  (1, 3, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Slicing</span>
+<span class="n">myTuple</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;welcome&quot;</span><span class="p">,</span> <span class="s2">&quot;to&quot;</span><span class="p">,</span> <span class="s2">&quot;GEM&quot;</span><span class="p">,</span> <span class="s2">&quot;530&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myTuple</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myTuple</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;hi&#39;, &#39;class&#39;, &#39;welcome&#39;, &#39;to&#39;, &#39;GEM&#39;, &#39;530&#39;)
+hi
+(&#39;welcome&#39;, &#39;to&#39;, &#39;GEM&#39;, &#39;530&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nested tuple: lists are contained in a tuple</span>
+<span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;mouse&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my_tuple:&quot;</span><span class="p">,</span> <span class="n">my_tuple</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my_tuple: (&#39;mouse&#39;, [8, 4, 6], (1, 2, 3))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example to show tuple is immutable</span>
+<span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original tuple:&quot;</span><span class="p">,</span> <span class="n">my_tuple</span><span class="p">)</span>
+
+<span class="c1"># we try to change the element at index 1, the second element, in the tuple</span>
+<span class="c1"># the error message shows we cannot change elements in tuple</span>
+<span class="n">my_tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Updated tuple:&quot;</span><span class="p">,</span> <span class="n">my_tuple</span><span class="p">)</span> <span class="c1"># an Error is expected when run this code</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original tuple: (1, 2, 3)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">qt</span><span class="o">/</span><span class="n">qy37fy6s3c1553y2k74063pr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_13485</span><span class="o">/</span><span class="mf">4002316466.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># we try to change the element at index 1, the second element, in the tuple</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># the error message shows we cannot change elements in tuple</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">my_tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Updated tuple:&quot;</span><span class="p">,</span> <span class="n">my_tuple</span><span class="p">)</span> <span class="c1"># an Error is expected when run this code</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dictionaries">
+<h3>4.3 Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h3>
+<p>In dictionaries we add sequence of items. We need to add a <code class="docutils literal notranslate"><span class="pre">key</span></code> and a <code class="docutils literal notranslate"><span class="pre">value</span></code> in for each item.</p>
+<ul class="simple">
+<li><p>A dictionary is declared with a curley bracket <strong>{ }</strong> or <strong>dict()</strong> funcrion.</p></li>
+<li><p>Dictionaries operate using key-value pairs.</p></li>
+<li><p>Accessed through calling the key.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a dictionary with key-value pairs</span>
+
+<span class="c1"># Option 1:  with a curley bracket{ }</span>
+<span class="n">tel</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jack&#39;</span><span class="p">:</span> <span class="mi">4098</span><span class="p">,</span> <span class="s1">&#39;sape&#39;</span><span class="p">:</span> <span class="mi">4139</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tel:&quot;</span><span class="p">,</span> <span class="n">tel</span><span class="p">)</span>
+
+<span class="c1"># Option 2:  with the dict() function</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">course</span><span class="o">=</span><span class="s2">&quot;GEM530&quot;</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="s2">&quot;101&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my_dict:&quot;</span><span class="p">,</span> <span class="n">my_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tel: {&#39;jack&#39;: 4098, &#39;sape&#39;: 4139}
+my_dict: {&#39;year&#39;: 2023, &#39;course&#39;: &#39;GEM530&#39;, &#39;section&#39;: &#39;101&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Add a new item in the dictionary:
+<code class="docutils literal notranslate"><span class="pre">dic[new_key]</span> <span class="pre">=</span> <span class="pre">new_value</span></code></p></li>
+<li><p>Find the value for corresponding key:
+<code class="docutils literal notranslate"><span class="pre">dic[key1]</span></code> can produce the value corresponding to the key1</p></li>
+<li><p>Change the value for a specific key:
+<code class="docutils literal notranslate"><span class="pre">dic[old_key]</span> <span class="pre">=</span> <span class="pre">new_value</span></code> can update / overwrite the old-value to the new value we want to pair with the old key</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add another item in the dictionary</span>
+<span class="n">tel</span><span class="p">[</span><span class="s1">&#39;guido&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4127</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tel:&#39;</span><span class="p">,</span><span class="n">tel</span><span class="p">)</span>
+
+<span class="c1"># Access the dictionary by calling the key</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tel[&#39;jack&#39;]:&quot;</span><span class="p">,</span> <span class="n">tel</span><span class="p">[</span><span class="s1">&#39;jack&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tel: {&#39;jack&#39;: 4098, &#39;sape&#39;: 4139, &#39;guido&#39;: 4127}
+tel[&#39;jack&#39;]: 4098
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the value of item</span>
+<span class="n">tel2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jack&#39;</span><span class="p">:</span> <span class="mi">4098</span><span class="p">,</span> <span class="s1">&#39;sape&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4139</span><span class="p">,</span> <span class="mi">4029</span><span class="p">]}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tel2:&quot;</span><span class="p">,</span> <span class="n">tel2</span><span class="p">)</span>
+
+<span class="c1"># Overwrite the value</span>
+<span class="n">tel2</span><span class="p">[</span><span class="s1">&#39;jack&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">40</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">tel2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tel2: {&#39;jack&#39;: 4098, &#39;sape&#39;: [4139, 4029]}
+{&#39;jack&#39;: 40, &#39;sape&#39;: [4139, 4029]}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try dic.update() function</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jack&#39;</span><span class="p">:</span> <span class="mi">4098</span><span class="p">,</span> <span class="s1">&#39;sape&#39;</span><span class="p">:</span> <span class="mi">4139</span><span class="p">}</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jack1&#39;</span><span class="p">:</span> <span class="mi">4098</span><span class="p">,</span> <span class="s1">&#39;sape2&#39;</span><span class="p">:</span> <span class="mi">4139</span><span class="p">}</span>
+<span class="n">d1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span> <span class="n">d2</span> <span class="p">)</span>
+<span class="n">d1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;jack&#39;: 4098, &#39;sape&#39;: 4139, &#39;jack1&#39;: 4098, &#39;sape2&#39;: 4139}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-activity-5 admonition">
+<p class="admonition-title">Activity 5</p>
+<p>Given:</p>
+<ul class="simple">
+<li><p>numbers1 = [4, 5, 6]</p></li>
+<li><p>numbers2 = (1, 2, 3)</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>What’s the data types for each of them?</p></li>
+<li><p>Can you change the value with index=1 to equal to “10” for both of them? If yes, write the code to change the value, if not, explain why.</p></li>
+</ol>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">numbers2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># write codes here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>See <a class="reference internal" href="#section-label-2-5"><span class="std std-ref">solution for activity 5</span></a> at the end.</p>
+</section>
+</section>
+<section id="solutions">
+<h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this heading">#</a></h2>
+<section id="activity-1">
+<span id="section-label-2-1"></span><h3>Activity 1<a class="headerlink" href="#activity-1" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uncomment the code below to get help for the .replace function on Jupyter</span>
+<span class="c1">#exa.replace?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exa</span> <span class="o">=</span> <span class="s2">&quot;this is an example&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">exa</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="s2">&quot;was&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exa</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="s2">&quot;was&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exa</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; is&quot;</span><span class="p">,</span> <span class="s2">&quot; was&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>thwas was an example
+this is an example
+this was an example
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="activity-2">
+<span id="section-label-2-2"></span><h3>Activity 2<a class="headerlink" href="#activity-2" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;GEM 530&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output would be ‘3’ since it starts from the last character and the -1 is 0 and -2 is next to it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output would be ‘ ‘ since it starts from the first character count it as zero position.</p>
+</section>
+<section id="activity-3">
+<span id="section-label-2-3"></span><h3>Activity 3<a class="headerlink" href="#activity-3" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">a</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="activity-4">
+<span id="section-label-2-4"></span><h3>Activity 4<a class="headerlink" href="#activity-4" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Explanation of the above code:<br>
+True and False is False. Then, False or True is True</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">and</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="activity-5">
+<span id="section-label-2-5"></span><h3>Activity 5<a class="headerlink" href="#activity-5" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. data types</span>
+<span class="n">numbers1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">numbers2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Type of numbers1&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">numbers1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Type of numbers2&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">numbers2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of numbers1 &lt;class &#39;list&#39;&gt;
+Type of numbers2 &lt;class &#39;tuple&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. We can change the value for list (numbers1 here), but not for tuple (numbers2).</span>
+<span class="n">numbers1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numbers1&quot;</span><span class="p">,</span> <span class="n">numbers1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1">#numbers2[1] = 9 # uncomment this line to see what happen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numbers1 [4, 9, 6]
+2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="week1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><div align="center">Chapter 1: An Introductory Guide to Python</div></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="week3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><div align="center">Chapter 3: Control Flow</div></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#div-align-center-exploring-built-in-functions-string-manipulation-br-numeric-operations-and-data-structures-div"><div align="center">Exploring Built-in Functions, String Manipulation, <br/>Numeric Operations, and Data Structures</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-blue-learning-objectives-span"><span style="color:blue"> Learning Objectives:</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions-in-python">Built-in Functions in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions-in-python-for-strings">1. Built-in Functions in Python for Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-string-operators">1.1 Common String Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-string-variable">1.2 Slicing String Variable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions-in-python-for-numerics">2. Built-in Functions in Python for Numerics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">2.1 Arithmetic Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-operators">2.2 Assignment Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">2.3 Comparison Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">2.4 Logical Operators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-more-note-on-basic-data-types">3. One More Note on Basic Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-data-structures">4. Complex Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">4.1 Lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">4.2 Tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">4.3 Dictionaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">Solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-1">Activity 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-2">Activity 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-3">Activity 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-4">Activity 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-5">Activity 5</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr. Suborna Ahmed
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
