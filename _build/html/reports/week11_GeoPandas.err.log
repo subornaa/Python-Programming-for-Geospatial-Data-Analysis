@@ -52,7 +52,7 @@ gpdAreas = gpd.read_file('week11_data/local-area-boundary.geojson') # local area
 During handling of the above exception, another exception occurred:
 
 [0;31mDriverError[0m                               Traceback (most recent call last)
-[0;32m/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_13779/3198774724.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_17362/3198774724.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     10[0m [0;31m# Load all required spatial datasets[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     11[0m [0;34m[0m[0m
 [0;32m---> 12[0;31m [0mgpdTrees[0m [0;34m=[0m [0mgpd[0m[0;34m.[0m[0mread_file[0m[0;34m([0m[0;34m'week11_data/street-trees.geojson'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
