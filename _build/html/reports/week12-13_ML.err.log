@@ -53,7 +53,7 @@ plt.show()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_19865/939069137.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_26669/939069137.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      9[0m [0;34m[0m[0m
 [1;32m     10[0m     [0;31m# Using KNN to get nearest neighbors[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [0;32m---> 11[0;31m     [0mknn[0m [0;34m=[0m [0mKNeighborsClassifier[0m[0;34m([0m[0mn_neighbors[0m[0;34m=[0m[0mk[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
