@@ -22,7 +22,7 @@ df.plot.barh()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_17245/610630747.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/qt/qy37fy6s3c1553y2k74063pr0000gn/T/ipykernel_19831/610630747.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mdf[0m[0;34m.[0m[0mplot[0m[0;34m.[0m[0mbarh[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/pandas/plotting/_core.py[0m in [0;36mbarh[0;34m(self, x, y, **kwargs)[0m

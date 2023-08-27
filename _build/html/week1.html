@@ -152,14 +152,26 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><div align="center">Chapter 1: An Introductory Guide to Python</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week2.html"><div align="center">Chapter 2: Python Fundamentals </div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week3.html"><div align="center">Chapter 3: Control Flow</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week4.html"><div align="center">Chapter 4: Errors and Exceptions in Python</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week8.html"><div align="center">Chapter 5: Python Plotting using Matplotlib</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week9_Numpy.html"><div align="center">Chapter 6: Numpy and Rasterio</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week10_Pandas.html"><div align="center">Chapter 7: Data Formatting and Summarizing with Pandas</div></a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Programming Basics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 1: An Introductory Guide to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week2.html">Chapter 2: Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week3.html">Chapter 3: Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week4.html">Chapter 4: Errors and Exceptions in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Visualization and Numpy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week8.html">Chapter 5: Python Plotting using Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week9_Numpy.html">Chapter 6: Numpy and Rasterio</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas and GeoPandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week10_Pandas.html">Chapter 7: Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week11_GeoPandas.html">Chapter 8: GeoPandas Python Library</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week12-13_ML.html">Chapter 9: Machine Learning</a></li>
 </ul>
 
     </div>
@@ -343,7 +355,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><div align="center">Chapter 1: An Introductory Guide to Python</div></h1>
+    <h1>Chapter 1: An Introductory Guide to Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -353,7 +365,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#div-align-center-data-types-data-structures-and-coding-conventions-div"><div align="center">Data Types, Data Structures, and Coding Conventions</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-data-structures-and-coding-conventions">Data Types, Data Structures, and Coding Conventions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-blue-learning-objectives-span"><span style="color:blue"> Learning Objectives:</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jumping-into-python">1. Jumping Into Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-as-a-calculator">1.1 Python As a Calculator</a></li>
@@ -395,11 +407,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="div-align-center-chapter-1-an-introductory-guide-to-python-div">
-<h1><div align="center">Chapter 1: An Introductory Guide to Python</div><a class="headerlink" href="#div-align-center-chapter-1-an-introductory-guide-to-python-div" title="Permalink to this heading">#</a></h1>
-<section id="div-align-center-data-types-data-structures-and-coding-conventions-div">
-<h2><div align="center">Data Types, Data Structures, and Coding Conventions</div><a class="headerlink" href="#div-align-center-data-types-data-structures-and-coding-conventions-div" title="Permalink to this heading">#</a></h2>
-<p><strong><div align="center">Author: Dr. Suborna Ahmed</div></strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-1-an-introductory-guide-to-python">
+<h1>Chapter 1: An Introductory Guide to Python<a class="headerlink" href="#chapter-1-an-introductory-guide-to-python" title="Permalink to this heading">#</a></h1>
+<section id="data-types-data-structures-and-coding-conventions">
+<h2>Data Types, Data Structures, and Coding Conventions<a class="headerlink" href="#data-types-data-structures-and-coding-conventions" title="Permalink to this heading">#</a></h2>
+<p><strong>Author: Dr. Suborna Ahmed</strong></p>
 </section>
 <section id="span-style-color-blue-learning-objectives-span">
 <h2><span style="color:blue"> Learning Objectives:</span><a class="headerlink" href="#span-style-color-blue-learning-objectives-span" title="Permalink to this heading">#</a></h2>
@@ -1215,8 +1227,8 @@ Before we use these functions / tools, we need to import modules: you can use th
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-08-26 22:54:48.417277
-Date and current time is:, 2023-08-26 22:54:48.417277
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-08-27 02:26:43.509474
+Date and current time is:, 2023-08-27 02:26:43.509474
 2023
 </pre></div>
 </div>
@@ -1271,7 +1283,7 @@ Date and current time is:, 2023-08-26 22:54:48.417277
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><div align="center">Chapter 2: Python Fundamentals </div></p>
+        <p class="prev-next-title">Chapter 2: Python Fundamentals</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1293,7 +1305,7 @@ Date and current time is:, 2023-08-26 22:54:48.417277
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#div-align-center-data-types-data-structures-and-coding-conventions-div"><div align="center">Data Types, Data Structures, and Coding Conventions</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-data-structures-and-coding-conventions">Data Types, Data Structures, and Coding Conventions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-blue-learning-objectives-span"><span style="color:blue"> Learning Objectives:</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jumping-into-python">1. Jumping Into Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-as-a-calculator">1.1 Python As a Calculator</a></li>

@@ -3,15 +3,27 @@
 
 format: jb-book
 root: intro
-chapters:
+
+parts:
+- caption: Python Programming Basics
+  chapters:
   - file: week1
   - file: week2
   - file: week3
   - file: week4
+
+- caption: Data Visualization and Numpy
+  chapters:
   - file: week8
   - file: week9_Numpy
+
+- caption: Pandas and GeoPandas
+  chapters:
   - file: week10_Pandas
   - file: week11_GeoPandas
+  
+- caption: Applications
+  chapters:
   - file: week12-13_ML
 
   

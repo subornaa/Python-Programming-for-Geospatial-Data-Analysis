@@ -152,14 +152,26 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="week1.html"><div align="center">Chapter 1: An Introductory Guide to Python</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week2.html"><div align="center">Chapter 2: Python Fundamentals </div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week3.html"><div align="center">Chapter 3: Control Flow</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week4.html"><div align="center">Chapter 4: Errors and Exceptions in Python</div></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><div align="center">Chapter 5: Python Plotting using Matplotlib</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week9_Numpy.html"><div align="center">Chapter 6: Numpy and Rasterio</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week10_Pandas.html"><div align="center">Chapter 7: Data Formatting and Summarizing with Pandas</div></a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Programming Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week1.html">Chapter 1: An Introductory Guide to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week2.html">Chapter 2: Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week3.html">Chapter 3: Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week4.html">Chapter 4: Errors and Exceptions in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Visualization and Numpy</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 5: Python Plotting using Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week9_Numpy.html">Chapter 6: Numpy and Rasterio</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas and GeoPandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week10_Pandas.html">Chapter 7: Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week11_GeoPandas.html">Chapter 8: GeoPandas Python Library</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week12-13_ML.html">Chapter 9: Machine Learning</a></li>
 </ul>
 
     </div>
@@ -343,7 +355,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><div align="center">Chapter 5: Python Plotting using Matplotlib</div></h1>
+    <h1>Chapter 5: Python Plotting using Matplotlib</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -408,9 +420,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="div-align-center-chapter-5-python-plotting-using-matplotlib-div">
-<h1><div align="center">Chapter 5: Python Plotting using Matplotlib</div><a class="headerlink" href="#div-align-center-chapter-5-python-plotting-using-matplotlib-div" title="Permalink to this heading">#</a></h1>
-<p><strong><div align="center">Author: Dr. Suborna Ahmed</div></strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-5-python-plotting-using-matplotlib">
+<h1>Chapter 5: Python Plotting using Matplotlib<a class="headerlink" href="#chapter-5-python-plotting-using-matplotlib" title="Permalink to this heading">#</a></h1>
+<p><strong>Author: Dr. Suborna Ahmed</strong></p>
 <p><a class="reference external" href="https://matplotlib.org/index.html"><img alt="matplotlib_pic2.PNG" src="_images/matplotlib_pic.PNG" /></a></p>
 <section id="span-style-color-blue-learning-objectives-span">
 <h2><span style="color:blue"> Learning Objectives:</span><a class="headerlink" href="#span-style-color-blue-learning-objectives-span" title="Permalink to this heading">#</a></h2>
@@ -480,7 +492,7 @@ We first import the matplotlib module and specify two lists, x and y, containing
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947cff5f70&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb62033220&gt;]
 </pre></div>
 </div>
 <img alt="_images/10c75c034ca7c526a179f5041e0f125161736cb3628235888947a189bbf3ddbc.png" src="_images/10c75c034ca7c526a179f5041e0f125161736cb3628235888947a189bbf3ddbc.png" />
@@ -499,7 +511,7 @@ We first import the matplotlib module and specify two lists, x and y, containing
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947d104610&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb6216ca30&gt;]
 </pre></div>
 </div>
 <img alt="_images/9b9459d5834c13a2c3b0cfd9df2bedcc1ca4ac392b23ce15fa8eae923584af7d.png" src="_images/9b9459d5834c13a2c3b0cfd9df2bedcc1ca4ac392b23ce15fa8eae923584af7d.png" />
@@ -521,7 +533,7 @@ So, x = [4, 5, 8], and the points plotted would be (0,4), (1,5), (2,8). But with
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947d259fd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb6237f220&gt;]
 </pre></div>
 </div>
 <img alt="_images/f97158bb3a3d8b53977beaf997ce23b660b8bbc0dfc76750a8f4585b682f8b37.png" src="_images/f97158bb3a3d8b53977beaf997ce23b660b8bbc0dfc76750a8f4585b682f8b37.png" />
@@ -536,7 +548,7 @@ So, x = [4, 5, 8], and the points plotted would be (0,4), (1,5), (2,8). But with
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947d371b80&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb6247af40&gt;]
 </pre></div>
 </div>
 <img alt="_images/6705c8e4ed5ebff7c2681eb69b71288ad8c8a8e72878aab039ddb142477fc6f1.png" src="_images/6705c8e4ed5ebff7c2681eb69b71288ad8c8a8e72878aab039ddb142477fc6f1.png" />
@@ -680,7 +692,7 @@ These are the commonly used markers in Python:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947d639760&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb6273fc10&gt;]
 </pre></div>
 </div>
 <img alt="_images/5289c4e2d63ead65e6905071708ad7bc75d8f641779ac94d7914d8d99aa2abb8.png" src="_images/5289c4e2d63ead65e6905071708ad7bc75d8f641779ac94d7914d8d99aa2abb8.png" />
@@ -694,7 +706,7 @@ These are the commonly used markers in Python:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947d747b80&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb62851fa0&gt;]
 </pre></div>
 </div>
 <img alt="_images/ad9bb37e74fa0930d1804801f6df55c4df90cf2573b321bf3d5076100e01ed8e.png" src="_images/ad9bb37e74fa0930d1804801f6df55c4df90cf2573b321bf3d5076100e01ed8e.png" />
@@ -708,7 +720,7 @@ These are the commonly used markers in Python:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947d859f40&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb6296e460&gt;]
 </pre></div>
 </div>
 <img alt="_images/2cd37e215ed96f14885c9e7edc89bf477ed36b43a1076a24f4e05881fd5ae002.png" src="_images/2cd37e215ed96f14885c9e7edc89bf477ed36b43a1076a24f4e05881fd5ae002.png" />
@@ -769,7 +781,7 @@ These are the commonly used markers in Python:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947db5b430&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb62c64670&gt;]
 </pre></div>
 </div>
 <img alt="_images/94eb32697e614873e13c21d81dfb29a205a990bec117d9cf691079db7bdda078.png" src="_images/94eb32697e614873e13c21d81dfb29a205a990bec117d9cf691079db7bdda078.png" />
@@ -783,7 +795,7 @@ These are the commonly used markers in Python:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947dbd4a00&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb62cdcd60&gt;]
 </pre></div>
 </div>
 <img alt="_images/461d1d1806897f15af691893ffb15d9e2096d418acf6ae8042840fe514834b03.png" src="_images/461d1d1806897f15af691893ffb15d9e2096d418acf6ae8042840fe514834b03.png" />
@@ -842,7 +854,7 @@ These are the commonly used markers in Python:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947d4fd550&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb624fedf0&gt;]
 </pre></div>
 </div>
 <img alt="_images/8b3b102be45b78b1618c46769c688dca2d8aa8f18cda55484ed7cb112d6a9f23.png" src="_images/8b3b102be45b78b1618c46769c688dca2d8aa8f18cda55484ed7cb112d6a9f23.png" />
@@ -856,7 +868,7 @@ These are the commonly used markers in Python:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947d982fa0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb62ae12e0&gt;]
 </pre></div>
 </div>
 <img alt="_images/ce757ec681ad4b98dc50ab16971b558b9a0c94b31c398776640bc5c856441a6b.png" src="_images/ce757ec681ad4b98dc50ab16971b558b9a0c94b31c398776640bc5c856441a6b.png" />
@@ -870,7 +882,7 @@ These are the commonly used markers in Python:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947ddaca60&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb62eb3dc0&gt;]
 </pre></div>
 </div>
 <img alt="_images/e480ee9eaf202465c1ce6127280ad7636a09065785b755d9139d46685e0e06c1.png" src="_images/e480ee9eaf202465c1ce6127280ad7636a09065785b755d9139d46685e0e06c1.png" />
@@ -1054,7 +1066,7 @@ Since the data points ((4,8), (5,10), and (8,20)) are outside the boundary, they
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f947eff6160&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb6535d700&gt;]
 </pre></div>
 </div>
 <img alt="_images/124c4e277ce961ed15072d40176bea458839acf24dd585e5a3be8cadaf5f62d8.png" src="_images/124c4e277ce961ed15072d40176bea458839acf24dd585e5a3be8cadaf5f62d8.png" />
@@ -1529,7 +1541,7 @@ These functions are used to set the viewing limits of your plot along the x and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9484d53c10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb6940e100&gt;]
 </pre></div>
 </div>
 <img alt="_images/45f2ae2a8c895fa4988d1f794580281226cc83a3a6dd59ffcb51908eb104d4a4.png" src="_images/45f2ae2a8c895fa4988d1f794580281226cc83a3a6dd59ffcb51908eb104d4a4.png" />
@@ -1560,7 +1572,7 @@ These functions are used to set the viewing limits of your plot along the x and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9484dc96a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb68049e20&gt;]
 </pre></div>
 </div>
 <img alt="_images/06c236d22d2b9683ef6ea2f987b688bb3c0e43a15634d0a9f3652dd4d00b11b7.png" src="_images/06c236d22d2b9683ef6ea2f987b688bb3c0e43a15634d0a9f3652dd4d00b11b7.png" />
@@ -1693,7 +1705,7 @@ These functions are used to set the viewing limits of your plot along the x and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f94837233a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7feb6847fdf0&gt;
 </pre></div>
 </div>
 <img alt="_images/9a9080324461f5e4e4ab1c1b8668b5677aee56fc9fba66cf9ce24c0dde2d34d1.png" src="_images/9a9080324461f5e4e4ab1c1b8668b5677aee56fc9fba66cf9ce24c0dde2d34d1.png" />
@@ -1712,7 +1724,7 @@ These functions are used to set the viewing limits of your plot along the x and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9465c51b20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7feb5ef04b50&gt;
 </pre></div>
 </div>
 <img alt="_images/e56ab83e96f3e25173ffd3adb4dbf1ab40ced6727bc48253e6661e18ae74e41d.png" src="_images/e56ab83e96f3e25173ffd3adb4dbf1ab40ced6727bc48253e6661e18ae74e41d.png" />
@@ -1794,7 +1806,7 @@ arrowprops=dict() = adding an arrow <br></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f948365df70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7feb64c43e20&gt;
 </pre></div>
 </div>
 <img alt="_images/5509449e1e5ead7eca82e8f34039cad231bd494571d660e6bcc9613df4b1c6d1.png" src="_images/5509449e1e5ead7eca82e8f34039cad231bd494571d660e6bcc9613df4b1c6d1.png" />
@@ -1859,7 +1871,7 @@ arrowprops=dict() = adding an arrow <br></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f94835bb190&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feb67e9adc0&gt;]
 </pre></div>
 </div>
 <img alt="_images/347f067b97ce49b50a0deb085dc66a70ede807964709de21ca11611fe0a67f29.png" src="_images/347f067b97ce49b50a0deb085dc66a70ede807964709de21ca11611fe0a67f29.png" />
@@ -1943,7 +1955,7 @@ arrowprops=dict() = adding an arrow <br></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f948400bf40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7feb686cd670&gt;
 </pre></div>
 </div>
 <img alt="_images/955b3b9e9774b2a50752475421e61c2e51605cd18354af88a295f1df7a18a54a.png" src="_images/955b3b9e9774b2a50752475421e61c2e51605cd18354af88a295f1df7a18a54a.png" />
@@ -1990,7 +2002,7 @@ arrowprops=dict() = adding an arrow <br></p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><div align="center">Chapter 4: Errors and Exceptions in Python</div></p>
+        <p class="prev-next-title">Chapter 4: Errors and Exceptions in Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -1998,7 +2010,7 @@ arrowprops=dict() = adding an arrow <br></p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><div align="center">Chapter 6: Numpy and Rasterio</div></p>
+        <p class="prev-next-title">Chapter 6: Numpy and Rasterio</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

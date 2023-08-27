@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 7: Data Formatting and Summarizing with Pandas &#8212; Python Programming for Geospatial Data Analysis</title>
+    <title>Chapter 7: Pandas &#8212; Python Programming for Geospatial Data Analysis</title>
   
   
   
@@ -150,16 +150,26 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="week1.html"><div align="center">Chapter 1: An Introductory Guide to Python</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week2.html"><div align="center">Chapter 2: Python Fundamentals </div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week3.html"><div align="center">Chapter 3: Control Flow</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week4.html"><div align="center">Chapter 4: Errors and Exceptions in Python</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week8.html"><div align="center">Chapter 5: Python Plotting using Matplotlib</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week9_Numpy.html"><div align="center">Chapter 6: Numpy and Rasterio</div></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><div align="center">Chapter 7: Data Formatting and Summarizing with Pandas</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week11_GeoPandas.html"><div align="center">Chapter 8: GeoPandas Python Library</div></a></li>
-<li class="toctree-l1"><a class="reference internal" href="week12-13_ML.html"><div align="center">Chapter 9: Machine Learning</div></a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Programming Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week1.html">Chapter 1: An Introductory Guide to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week2.html">Chapter 2: Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week3.html">Chapter 3: Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week4.html">Chapter 4: Errors and Exceptions in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Visualization and Numpy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week8.html">Chapter 5: Python Plotting using Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week9_Numpy.html">Chapter 6: Numpy and Rasterio</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas and GeoPandas</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 7: Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week11_GeoPandas.html">Chapter 8: GeoPandas Python Library</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week12-13_ML.html">Chapter 9: Machine Learning</a></li>
 </ul>
 
     </div>
@@ -343,7 +353,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><div align="center">Chapter 7: Data Formatting and Summarizing with Pandas</div></h1>
+    <h1>Chapter 7: Pandas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -353,6 +363,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-formatting-and-summarizing">Data Formatting and Summarizing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-blue-learning-objectives-span"><span style="color:blue"> Learning Objectives:</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">1. Pandas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-series">1.1. Pandas Series</a><ul class="nav section-nav flex-column">
@@ -393,12 +404,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="div-align-center-chapter-7-data-formatting-and-summarizing-with-pandas-div">
-<h1><div align="center">Chapter 7: Data Formatting and Summarizing with Pandas</div><a class="headerlink" href="#div-align-center-chapter-7-data-formatting-and-summarizing-with-pandas-div" title="Permalink to this heading">#</a></h1>
-<p><strong><div align="center"> Author: Dr. Suborna Ahmed</div></strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-7-pandas">
+<h1>Chapter 7: Pandas<a class="headerlink" href="#chapter-7-pandas" title="Permalink to this heading">#</a></h1>
+<section id="data-formatting-and-summarizing">
+<h2>Data Formatting and Summarizing<a class="headerlink" href="#data-formatting-and-summarizing" title="Permalink to this heading">#</a></h2>
+<p><strong>Author: Dr. Suborna Ahmed</strong></p>
 <p><img alt="panda1.png" src="_images/panda1.png" /></p>
 <p><img alt="pandas-2.png" src="_images/pandas.png" /></p>
 <p>More references: <a class="reference external" href="https://www.kaggle.com/code/kashnitsky/topic-1-exploratory-data-analysis-with-pandas">https://www.kaggle.com/code/kashnitsky/topic-1-exploratory-data-analysis-with-pandas</a></p>
+</section>
 <section id="span-style-color-blue-learning-objectives-span">
 <h2><span style="color:blue"> Learning Objectives:</span><a class="headerlink" href="#span-style-color-blue-learning-objectives-span" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -2751,7 +2765,7 @@ Name: sepal length (cm), Length: 150, dtype: float64
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">qt</span><span class="o">/</span><span class="n">qy37fy6s3c1553y2k74063pr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_17245</span><span class="o">/</span><span class="mf">610630747.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">qt</span><span class="o">/</span><span class="n">qy37fy6s3c1553y2k74063pr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_19831</span><span class="o">/</span><span class="mf">610630747.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
 
 <span class="nn">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/pandas/plotting/_core.py</span> in <span class="ni">barh</span><span class="nt">(self, x, y, **kwargs)</span>
@@ -4263,7 +4277,7 @@ Name: colors, Length: 150, dtype: object
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><div align="center">Chapter 6: Numpy and Rasterio</div></p>
+        <p class="prev-next-title">Chapter 6: Numpy and Rasterio</p>
       </div>
     </a>
     <a class="right-next"
@@ -4271,7 +4285,7 @@ Name: colors, Length: 150, dtype: object
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><div align="center">Chapter 8: GeoPandas Python Library</div></p>
+        <p class="prev-next-title">Chapter 8: GeoPandas Python Library</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -4293,6 +4307,7 @@ Name: colors, Length: 150, dtype: object
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-formatting-and-summarizing">Data Formatting and Summarizing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#span-style-color-blue-learning-objectives-span"><span style="color:blue"> Learning Objectives:</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">1. Pandas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-series">1.1. Pandas Series</a><ul class="nav section-nav flex-column">
