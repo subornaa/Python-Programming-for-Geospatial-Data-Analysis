@@ -38,7 +38,7 @@ Ahmed, S. (2023). Python Programming for Geospatial Data Analysis.
 
 ```
 
-#### Comments
+**Comments**
 
 For any comments regarding this document, reach out to [Dr. Ahmed](https://forestry.ubc.ca/faculty-profile/suborna-ahmed/).
 
