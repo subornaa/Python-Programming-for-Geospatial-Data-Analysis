@@ -23,6 +23,7 @@ Materials were prepared for this book at the Faculty of Forestry, University of 
 | Contributors  | Affilations              |
 | ------------- | ------------------------ |
 | Suborna Ahmed | Faculty of Forestry, UBC |
+| Rik Nuijten   | Faculty of Forestry, UBC |
 | Yuwen Luo     | Faculty of Science, UBC  |
 
 ### License
